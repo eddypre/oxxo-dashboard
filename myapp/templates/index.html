@@ -1,0 +1,289 @@
+<html>
+    <head>
+        <title>
+            OXXO System Status
+        </title>
+      <style>
+
+
+		/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 460px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+        .light-outage{
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGw9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iLTIgLTEgMjIgMjAiIHdpZHRoPSIyMnB0IiBoZWlnaHQ9IjIwcHQiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+PG1ldGFkYXRhPiBQcm9kdWNlZCBieSBPbW5pR3JhZmZsZSA2LjYuMSA8ZGM6ZGF0ZT4yMDE2LTExLTE2IDIzOjA2OjA2ICswMDAwPC9kYzpkYXRlPjwvbWV0YWRhdGE+PGRlZnMvPjxnIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLW9wYWNpdHk9IjEiIHN0cm9rZS1kYXNoYXJyYXk9Im5vbmUiIGZpbGw9Im5vbmUiIGZpbGwtb3BhY2l0eT0iMSI+PHRpdGxlPmljb25fNTEyeDUxMjwvdGl0bGU+PGc+PHRpdGxlPkxheWVyIDE8L3RpdGxlPjxwYXRoIGQ9Ik0gLS44OTMzMDU0NCAxNy4wMDMyNDYgTCA4LjI1NzEwODQgMS4wMTYzMTYzIEMgOC41MzE0NTggLjUzNjk5MyA5LjE0MjQzMDQgLjM3MDgyODk0IDkuNjIxNzU0IC42NDUxNzg0NCBDIDkuNzc2MzA1IC43MzM2Mzg4IDkuOTA0NDMxIC44NjE3NjQ4NyA5Ljk5Mjg5MTYgMS4wMTYzMTYzIEwgMTkuMTQzMzA1IDE3LjAwMzI0NiBDIDE5LjQxNzY1NSAxNy40ODI1NyAxOS4yNTE0OTEgMTguMDkzNTQyIDE4Ljc3MjE2OCAxOC4zNjc4OTIgQyAxOC42MjA5MjMgMTguNDU0NDU5IDE4LjQ0OTY4MSAxOC41IDE4LjI3NTQxNCAxOC41IEwgLS4wMjU0MTM4ODcgMTguNSBDIC0uNTc3Njk4NjQgMTguNSAtMS4wMjU0MTM5IDE4LjA1MjI4NSAtMS4wMjU0MTM5IDE3LjUgQyAtMS4wMjU0MTM5IDE3LjMyNTczMyAtLjk3OTg3MzI0IDE3LjE1NDQ5MSAtLjg5MzMwNTQ0IDE3LjAwMzI0NiBaIiBmaWxsPSIjZjEyNzFhIi8+PC9nPjwvZz48L3N2Zz4=);
+            margin-right: 7px;
+            background-repeat: no-repeat;
+            height: 18px;
+            width: 19px;
+            background-size: 19px 18px;
+            position: left;
+            left: -2px;
+            top: 4px; 
+        }
+
+		.burn{
+            background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bD0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSI3MTEgOTAgMTggMTgiIHdpZHRoPSIxOHB0IiBoZWlnaHQ9IjE4cHQiIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyI+CiAgPG1ldGFkYXRhPiBQcm9kdWNlZCBieSBPbW5pR3JhZmZsZSA3LjQuMiAKICAgIDxkYzpkYXRlPjIwMTgtMDMtMDEgMDc6MDE6MjEgKzAwMDA8L2RjOmRhdGU+CiAgPC9tZXRhZGF0YT4KICA8ZGVmcy8+CiAgPGcgc3Ryb2tlPSJub25lIiBzdHJva2Utb3BhY2l0eT0iMSIgc3Ryb2tlLWRhc2hhcnJheT0ibm9uZSIgZmlsbD0ibm9uZSIgZmlsbC1vcGFjaXR5PSIxIj4KICAgIDx0aXRsZT5DYW52YXMgMTwvdGl0bGU+CiAgICA8cmVjdCBmaWxsPSJ3aGl0ZSIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ii8+CiAgICA8Zz4KICAgICAgPHRpdGxlPkxheWVyIDE8L3RpdGxlPgogICAgICA8cGF0aCBkPSJNIDcyNSAxMDYuMjUgTCA3MTIuNzUgMTA2LjI1IEwgNzEyLjc1IDk0IEwgNzE4Ljg3NSA5NCBMIDcxOC44NzUgOTIuMjUgTCA3MTIuNzUgOTIuMjUgQyA3MTEuNzc4NzUgOTIuMjUgNzExIDkzLjAzNzUgNzExIDk0IEwgNzExIDEwNi4yNSBDIDcxMSAxMDcuMjEyNSA3MTEuNzc4NzUgMTA4IDcxMi43NSAxMDggTCA3MjUgMTA4IEMgNzI1Ljk2MjUgMTA4IDcyNi43NSAxMDcuMjEyNSA3MjYuNzUgMTA2LjI1IEwgNzI2Ljc1IDEwMC4xMjUgTCA3MjUgMTAwLjEyNSBMIDcyNSAxMDYuMjUgWiIgZmlsbD0iIzAwNzBjOSIvPgogICAgICA8cGF0aCBkPSJNIDcyMi42NTU2IDkwIEwgNzIyLjY1NTYgOTEuODEyNjkgTCA3MjUuOTA5NCA5MS44MTI2OSBMIDcxNyAxMDAuNzIyMDUgTCA3MTguMjc3OTUgMTAyIEwgNzI3LjE4NzMgOTMuMDkwNjMgTCA3MjcuMTg3MyA5Ni4zNDQ0MSBMIDcyOSA5Ni4zNDQ0MSBMIDcyOSA5MCBMIDcyMi42NTU2IDkwIFoiIGZpbGw9IiMwMDcwYzkiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPgo=);
+            margin-right: 7px;
+            background-repeat: no-repeat;
+            height: 18px;
+            width: 19px;
+            background-size: 19px 18px;
+            position: relative;
+            left: -2px;
+            top: 4px; 
+        }
+
+
+      	.light-available {
+    			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGw9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE2IDE2IiB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPjxtZXRhZGF0YT4gUHJvZHVjZWQgYnkgT21uaUdyYWZmbGUgNi42LjEgPGRjOmRhdGU+MjAxNi0xMS0xNiAwODozNTo0OSArMDAwMDwvZGM6ZGF0ZT48L21ldGFkYXRhPjxkZWZzLz48ZyBzdHJva2U9Im5vbmUiIHN0cm9rZS1vcGFjaXR5PSIxIiBzdHJva2UtZGFzaGFycmF5PSJub25lIiBmaWxsPSJub25lIiBmaWxsLW9wYWNpdHk9IjEiPjx0aXRsZT5DYW52YXMgMTE8L3RpdGxlPjxnPjx0aXRsZT5MYXllciAxPC90aXRsZT48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzI4Yzk0MCIvPjwvZz48L2c+PC9zdmc+);
+				    margin-right: 1rem;
+				    background-repeat: no-repeat;
+				    height: 1.6rem;
+				    width: 1.6rem;
+				    position: relative;
+				    top: 0.3rem;
+			}
+
+			.light-container {
+				display:table;
+				width: 100%;
+			}
+
+			.light-content {
+				display: table-cell;
+				vertical-align: top;
+			}
+			table {
+				width: auto;
+				font: 15px Arial;
+			}
+
+			td {
+				border: solid 0px #D1D3D5;
+    			width: 10%;
+    			padding: 0.5rem 1rem;
+    			border-top: 0.1rem solid #d3d3d3;
+    			border-bottom: 0.1rem solid #d3d3d3;
+    			vertical-align: top;
+			}
+
+			table, th {
+				border: solid 0px #D1D3D5;
+				border-collapse: collapse;
+				padding: 3px 4px;
+				text-align: center;
+			}/*
+			img {
+				width: 64%;
+			}*/
+        * {
+/* Here i made the margin and padding  0 */
+  margin: 0; 
+  
+    padding: 0;
+}
+  
+.navbar {
+    display: flex;
+  
+/* This is used to make the navbar sticky, So that the
+    navbar stays at the top part even if we scroll */
+    position: sticky; 
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+  
+/*it specifies the mouse cursor to be displayed
+    when it is pointed over the element */
+    cursor: pointer;
+}
+  
+.nav-list {
+    width: 50%;
+    display: flex;
+}
+  
+.nav-list li {
+    list-style: none;
+    padding: 10px 1px;
+}
+  
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+}
+  
+.nav-list li a:hover {
+    color: black;
+}
+/*  
+.rightNav {
+    width: 50%;
+    text-align: right;
+}
+  
+#search {
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+*/
+.background {
+    background: rgba(205, 57, 48, 1.0);
+    background-blend-mode: darken;
+    background-size: cover;
+}
+  
+      </style>
+    </head>
+    <body>
+        <!-- here in nav tag i have used two classes 
+             that is navbar and background-->
+        <!-- each class declared in nav tag will be 
+             used to design the form using CSS-->
+        <nav class="navbar background">
+            <!-- we have used list tag that is ul 
+                 to list the items-->
+            <center>
+            <ul class="nav-list">
+                <!--<li><a href="#Car">Car</a></li>
+                <li><a href="#file">file</a></li>-->
+                <li><img src="https://www.oxxo.com/img/logo.png" alt="Oxxo System Status" width="84" height="35"></li>
+            </ul>
+        </center>
+            <!-- we have used rightnav in order to design
+                 the seachbar properly by using CSS-->
+            <!--<div class="rightNav">-->
+          <!-- the value that search bar will take is text -->
+                <!--<input type="text" name="search" id="search" />
+                <button class="btn btn-sm">Search</button>-->
+            <!--</div>-->
+        </nav><br><br>
+        <center>
+        	<h3 style="font-family:Arial; color: #333333;">&nbsp&nbsp&nbsp&nbspSystem Status</h3>
+    	</center>
+
+    	<!------TABLAAAAA -->
+    	<br><br><br><br>
+    	<div>
+			<center>
+			<table>
+				<tr>
+					<td> 
+						<div class="light-container">
+							<div class="light-content light-image">
+								<div class="light-available">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seguridad
+								
+								</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="light-container">
+							<div class="light-content light-image">
+								<div class="light-available">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Red</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="light-container">
+							<div class="light-content light-image">
+								<div class="light-available">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aplicaciones</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="light-container">
+							<div class="light-content light-image">
+								<div class="light-available">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Internet</div>
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="light-container">
+							<div class="light-content light-image">
+								<div class="light-outage popup" onclick="myFunction()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiendas
+									<span class="popuptext" id="myPopup">
+										Organization: OXXO 4.0 Sureste<br>
+										Network: 10OAX50FI4 - OXXO Guadalupe<br>
+										Model:MX67<br>
+										Last Report: 2023-01-10T16:13:57Z<br>
+										Uplink Interface WAN1 - 10.236.129.90: Status Failed<br>
+										Uplink Interface WAN2 - 192.168.54.94: Status Failed<br><br>
+										---<br>
+										<a href="https://n498.meraki.com/-10OAX50FI4-OXXO/n/dV_58cIb/manage/usage/traffic_report" target="_blank">More Info</a>
+									</span></div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+			</center>
+		</div>
+
+		<script>
+			// When the user clicks on div, open the popup
+			function myFunction() {
+			  var popup = document.getElementById("myPopup");
+			  popup.classList.toggle("show");
+			}
+		</script>
+
+
+    </body>
+</html>
