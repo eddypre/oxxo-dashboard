@@ -1,3 +1,5 @@
 django==2.1.7
 tetpyclient
 meraki
+pysnow
+appdynamics==22.1.0.0
