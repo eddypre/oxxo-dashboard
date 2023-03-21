@@ -1,0 +1,72 @@
+# Create your views here.
+def hello(request):
+    MERAKI_API_KEY="008189248694c721d9b440a15aa2333208e42206"
+    ORG_NAME="OXXO 4.0 Sureste"
+    organization_id = '618119048856602390'
+    NETWORK_NAME="10OAX50FI4 - OXXO Guadalupe"
+    #dashboard = meraki.DashboardAPI(MERAKI_API_KEY)
+    dashboard = meraki.DashboardAPI(MERAKI_API_KEY, suppress_logging=True)
+    response = dashboard.organizations.getOrganizationUplinksStatuses(organization_id, total_pages='all')
+    print(response)
+
+    #Integration with servicenow
+    # Create client object
+    servicenowURL = 'https://dev113692.service-now.com/api/now/table/incident'
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "short_description": "Ticket creado desde Python: Uplink Interface WAN1 - 10.236.129.90: Status Failed",
+        "caller_id": "Eduardo Triana",
+        "impact": 1,
+        "urgency": 2
+    }
+    res = requests.post(servicenowURL, auth=('admin', '6z$mL%8JrpEV'), headers=headers, data=json.dumps(payload)) 
+    print(res.text)
+    return render(request, 'index.html')
+    '''
+    meraki-api="008189248694c721d9b440a15aa2333208e42206"
+    API_ENDPOINT="https://tet-pov-rtp1.cpoc.co/"
+    api_key="a8799f024bac433d83ebc09805aa794c"
+    api_secret="4ba57794fc0322f48f339395801138ab234336b4"
+    #restclient = RestClient(API_ENDPOINT,credentials_file='api_credentials.json',verify=False)
+    restclient = RestClient(API_ENDPOINT, api_key=api_key, api_secret=api_secret, verify=False)
+    resp = restclient.get('/app_scopes')
+
+    for scope in resp.json():
+	    print(scope["id"], scope["name"])
+    return HttpResponse("<h2><center>System Status</center></h2><br><br><p>%s</p>" % scope)
+    '''
+def users(request):
+    MERAKI_API_KEY="008189248694c721d9b440a15aa2333208e42206"
+    ORG_NAME="OXXO 4.0 Sureste"
+    organization_id = '618119048856602390'
+    NETWORK_NAME="10OAX50FI4 - OXXO Guadalupe"
+
+    #dashboard = meraki.DashboardAPI(MERAKI_API_KEY)
+    dashboard = meraki.DashboardAPI(MERAKI_API_KEY, suppress_logging=True)
+    orgs = dashboard.organizations.getOrganizations()
+    pprint(orgs)
+
+
+    API_ENDPOINT = "https://tet-pov-rtp1.cpoc.co/"
+    api_key = "79d3fec8ae1140008020f1b01aa0e082"
+    api_secret = "49d8fcd6c058af147fc9ac369ea5f3e005a23d4b"
+    #API_ENDPOINT="https://tet-pov-rtp1.cpoc.co/"
+    #api_key="a8799f024bac433d83ebc09805aa794c"
+    #api_secret="4ba57794fc0322f48f339395801138ab234336b4"
+    restclient = RestClient(API_ENDPOINT, api_key=api_key, api_secret=api_secret, verify=False)
+
+    for entry in orgs:
+        if entry['name'] == ORG_NAME:
+            organization_id = entry["id"]
+    print(organization_id)
+
+    resp = restclient.get('/users')
+    to_print = "<center>"
+    for user in resp.json():
+        to_print += user["email"]
+        to_print += "<br>"
+    to_print += "</center>"
+    return HttpResponse("<h2><center>Users</center></h2><br><br><p>%s</p>" % to_print)

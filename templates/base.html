@@ -345,7 +345,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'assets/pages/charts/flot.html' %}' %}" class="nav-link">
+                <a href="{% static 'assets/pages/charts/flot.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Flot</p>
                 </a>
@@ -911,7 +911,7 @@
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
-                  <a href="{% static 'assets/pages/UI/tiendas.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>  
 
@@ -927,7 +927,8 @@
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
               </div>
 
@@ -943,7 +944,8 @@
                   <div class="icon">
                     <i class="ion ion-person-add"></i>
                   </div>
-                  <a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
                 </div>
               </div>
 
@@ -959,7 +961,8 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% static 'assets/pages/UI/seguridad.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!--<a href="{% static 'assets/pages/UI/seguridad.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="{% url 'SEGURIDAD' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -975,7 +978,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -1035,7 +1038,7 @@
             <!--INICIO DE TABLECHIDA-->
             <div class="card">
                 <div class="card-header">
-                  <a href="https://n498.meraki.com/o/9tr4LaIb/manage/organization/summary"><h3 class="card-title">Tabla de información (Tiendas)</h3></a>
+                  <a href="https://n498.meraki.com/o/9tr4LaIb/manage/organization/summary"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -1045,62 +1048,12 @@
                       <th>Organization</th>
                       <th>Network</th>
                       <th>Last Report</th>
-                      <th>Uplink Interface WAN1</th>
-                      <th>Uplink Interface WAN2</th>
+                      <th>Status</th>
+                      <th>IP address</th>
                     </tr>
                     </thead>
                     <tbody>
                       <!--
-                    <tr>
-                      <td>OXXO 4.0 Sureste</td>
-                      <td>10OAX50FI4</td>
-                      <td>2023-02-20T07:13:57Z</td>
-                      <td>10.236.129.90: Status Failed</td>
-                      <td>192.168.54.94: Status Failed</td>
-                    </tr>
-                    <tr>
-                      <td>OXXO 4.0 Sureste</td>
-                      <td>10OAX50AXK                      </td>
-                      <td>2023-02-20T08:15:57Z</td>
-                      <td>189.250.225.240: Status Failed</td>
-                      <td>192.168.7.2</td>
-                    </tr>
-                    <tr>
-                      <td>OXXO 4.0 Sureste</td>
-                      <td>10OAX506X2                      </td>
-                      <td>2023-02-20T08:17:57Z</td>
-                      <td>192.168.1.64: Status Failed</td>
-                      <td>192.168.7.2</td>
-                    </tr>
-                    <tr>
-                        <td>OXXO 4.0 Sureste</td>
-                        <td>10OAX50N1A                      </td>
-                        <td>2023-02-20T09:17:57Z</td>
-                        <td>10.174.129.42: Status Failed</td>
-                        <td>192.168.11.245</td>
-                      </tr>
-                      <tr>
-                        <td>OXXO 4.0 Sureste</td>
-                        <td>10OAX507JS                    </td>
-                        <td>2023-02-20T09:20:57Z</td>
-                        <td>10.174.129.106: Status Failed</td>
-                        <td>192.168.11.220</td>
-                      </tr>
-                      <tr>
-                        <td>OXXO 4.0 Sureste</td>
-                        <td>10OAX506X2                      </td>
-                        <td>2023-02-20T09:27:57Z</td>
-                        <td>10.174.128.162: Status Failed</td>
-                        <td>192.168.7.2</td>
-                      </tr>
-                      <tr>
-                        <td>OXXO 4.0 Sureste</td>
-                        <td>10OAX50BQX                      </td>
-                        <td>2023-02-20T09:25:57Z</td>
-                        <td>10.174.128.154: Status Failed</td>
-                        <td>192.168.7.2</td>
-                      </tr>
-                      <tr>
                         <td>OXXO 4.0 Sureste</td>
                         <td>10OAX50RD6                    </td>
                         <td>2023-02-20T10:17:57Z</td>
@@ -1110,11 +1063,11 @@
                     -->
                       {% for link in links %}
                         <tr>
-                          <td>{{link.interface}}</td>
+                          <td>CPOC 2023</td>
                           <td>{{link.network}}</td>
                           <td>{{link.lastReportedAt}}</td>
+                          <td>{{link.interface}}: {{link.status}}</td>
                           <td>{{link.ip}}</td>
-                          <td>{{link.status}}</td>
                         </tr>
                       {% endfor %}
 
@@ -1149,7 +1102,6 @@
             <div class="card direct-chat direct-chat-primary">
               <div class="card-header">
                 <h3 class="card-title">Direct Chat</h3>
-
                 <div class="card-tools">
                   <span title="3 New Messages" class="badge badge-primary">3</span>
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -1241,7 +1193,6 @@
                     <li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user1-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Count Dracula
@@ -1256,7 +1207,6 @@
                     <!--<li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user7-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Sarah Doe
@@ -1271,7 +1221,6 @@
                     <!--<li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user3-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Nadia Jolie
@@ -1286,7 +1235,6 @@
                     <!--<li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user5-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Nora S. Vans
@@ -1301,7 +1249,6 @@
                     <!--<li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user6-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             John K.
@@ -1316,7 +1263,6 @@
                     <!--<li>
                       <a href="#">
                         <img class="contacts-list-img" src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar">
-
                         <div class="contacts-list-info">
                           <span class="contacts-list-name">
                             Kenneth M.
@@ -1355,7 +1301,6 @@
                   <i class="ion ion-clipboard mr-1"></i>
                   To Do List
                 </h3>
-
                 <div class="card-tools">
                   <ul class="pagination pagination-sm">
                     <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
@@ -1539,7 +1484,6 @@
                   <i class="fas fa-th mr-1"></i>
                   Sales Graph
                 </h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
@@ -1558,21 +1502,18 @@
                   <div class="col-4 text-center">
                     <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
-
                     <div class="text-white">Mail-Orders</div>
                   </div>-->
                   <!-- ./col -->
                   <!--<div class="col-4 text-center">
                     <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
-
                     <div class="text-white">Online</div>
                   </div>-->
                   <!-- ./col -->
                   <!--<div class="col-4 text-center">
                     <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
                            data-fgColor="#39CCCC">
-
                     <div class="text-white">In-Store</div>
                   </div>-->
                   <!-- ./col -->
@@ -1587,7 +1528,6 @@
             <!--
             <div class="card bg-gradient-success">
               <div class="card-header border-0">
-
                 <h3 class="card-title">
                   <i class="far fa-calendar-alt"></i>
                   Calendar
