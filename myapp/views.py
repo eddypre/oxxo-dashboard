@@ -9,7 +9,6 @@ import requests
 import json
 from django.template import Template, Context
 #import appdynamics
-import requests
 #from requests.packages.urllib3.exceptions import InsecureRequestWarning
 #requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
