@@ -9,18 +9,17 @@ import requests
 import json
 from django.template import Template, Context
 import appdynamics
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-#service now:
+#python manage.py runserver 3000
+#source venv/bin/activate
 #user: ctriana@plannet.mx
 #password: 7D702c4d80$
-#cloud--
 #instance: https://dev113692.service-now.com
 #username: admin
 #Current password: 6z$mL%8JrpEV
-
-#
-#python manage.py runserver 3000
-#source venv/bin/activate
 
 def BASE(request):
     return render(request, 'base.html', {"links":getLinks()})
@@ -86,3 +85,12 @@ def getLinks():
             #print("Interface==>"+interface+", Status==>"+status+", IP==>"+ip)
     #ctx = {"uno":"uno"}
     return links
+
+def getTetration():
+    API_ENDPOINT = "https://tet-pov-rtp1.cpoc.co"
+    restclient = RestClient(API_ENDPOINT, credentials_file='api_credentials.json', verify=False)
+    #Followed by API calls, for example API to retrieve list of agents.
+    #API can be passed /openapi/v1/sensores or just /sensors.
+    resp = restclient.get('sensors')
+    print(resp)
+    
