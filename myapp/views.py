@@ -44,6 +44,7 @@ class link:
         self.status = status
         self.ip = ip
 
+#meraki
 def getLinks():
     links = []
     #oldmerakiapi='008189248694c721d9b440a15aa2333208e42206'
