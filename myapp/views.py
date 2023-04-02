@@ -86,6 +86,7 @@ def getLinks():
     #ctx = {"uno":"uno"}
     return links
 
+#tetration
 def getTetration():
     API_ENDPOINT = "https://tet-pov-rtp1.cpoc.co"
     restclient = RestClient(API_ENDPOINT, credentials_file='api_credentials.json', verify=False)
