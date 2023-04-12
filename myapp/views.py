@@ -8,6 +8,7 @@ import pysnow
 import requests
 import json
 from django.template import Template, Context
+#from acitoolkit.acitoolkit import Tenant, Session
 #import appdynamics
 #from requests.packages.urllib3.exceptions import InsecureRequestWarning
 #requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -33,6 +34,8 @@ def APLICACIONES(request):
     return render(request, 'aplicaciones.html')
 
 def RED(request):
+    print("ACIIIIIIIII")
+    getACI()
     return render(request, 'red.html')
 
 class link:
@@ -56,7 +59,7 @@ def getLinks():
     MERAKI_API_KEY="1ba6895780ac12d8c108e641367fcf4c7a9ffc17"
     organization_id = '618119048856602329'      
 
-    dashboard = meraki.DashboardAPI(MERAKI_API_KEY)
+    dashboard = meraki.DashboardAPI(MERAKI_API_KEY, output_log=False, print_console=False)
     response = dashboard.organizations.getOrganizationUplinksStatuses(organization_id, total_pages='all')
 
     for network in response:
@@ -95,3 +98,25 @@ def getTetration():
     resp = restclient.get('sensors')
     print(resp)
     
+#aci
+def getACI():
+
+    base_url = 'https://198.18.153.144/api/'
+    # create credentials structure
+    name_pwd = {'aaaUser': {'attributes': {'name': 'admin', 'pwd': 'C1sco123!'}}}
+    json_credentials = json.dumps(name_pwd)
+    # log in to API
+    login_url = base_url + 'aaaLogin.json'
+    post_response = requests.post(login_url, data=json_credentials)
+    # get token from login response structure
+    auth = json.loads(post_response.text)
+    login_attributes = auth['imdata'][0]['aaaLogin']['attributes']
+    auth_token = login_attributes['token']
+    # create cookie array from token
+    cookies = {}
+    cookies['APIC-Cookie'] = auth_token
+    # read a sensor, incorporating token in request
+    sensor_url = base_url + 'mo/topology/pod-1/node-1/sys/ch/bslot/board/sensor-3.json'
+    get_response = requests.get(sensor_url, cookies=cookies, verify=False)
+    # display sensor data structure
+    print(get_response.json())

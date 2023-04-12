@@ -3,3 +3,4 @@ tetpyclient
 meraki
 pysnow
 appdynamics==23.2.0.5678
+acitoolkit
