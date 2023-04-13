@@ -904,20 +904,25 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
 
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                {% with name="1" %}  
-                {% endwith %}
-                {% if name == "5" %}
-                  <div class="small-box bg-success">
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <!--{{ links.7.status }} {{links.7.ip}}-->
+            {% if links.7.status != "active" %}
+              <div class="small-box bg-danger">
+            {% else %}
+              <div class="small-box bg-success">
+            {% endif %}
+            <!--{% for link in links %}
+              {{link.ip}}<br>
+            {% endfor %} -->
+            <!--<div class="small-box bg-danger">-->
+              <div class="inner">
+                <h4><b>Tiendas</b></h4>
+                {% if links.7.status != "active" %}
+                  <p>Important</p>
                 {% else %}
-                  <div class="small-box bg-danger">
+                  <p>Informational</p>
                 {% endif %}
-                <!--<div class="small-box bg-danger">-->
-                  <div class="inner">
-                    <h4><b>Tiendas</b></h4>
-    
-                    <p>Important</p>
                     <!--<p>Unique Visitors</p>-->
                   </div>
                   <div class="icon">
@@ -1075,7 +1080,12 @@
                         <td>192.168.7.2</td>
                       </tr>
                     -->
+
+                      <!--{% with counter=0 %}-->
                       {% for link in links %}
+                        <!--{% if link.status != "active" %}
+                          {{ counter|add:"1" }}
+                        {% endif %}-->
                         <tr>
                           <td>CPOC 2023</td>
                           <td>{{link.network}}</td>
@@ -1084,6 +1094,7 @@
                           <td>{{link.ip}}</td>
                         </tr>
                       {% endfor %}
+                      <!--{% endwith %}-->
 
                     <!--
                     <tr>
