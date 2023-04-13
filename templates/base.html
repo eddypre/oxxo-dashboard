@@ -964,12 +964,12 @@
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="small-box bg-danger">
               <div class="inner">
                 <h4><b>Seguridad</b></h4>
 
                 <!--<p>New Orders</p>-->
-                <p>Warning</p>
+                <p>Important</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
@@ -1052,7 +1052,7 @@
             <!--INICIO DE TABLECHIDA-->
             <div class="card">
                 <div class="card-header">
-                  <a href="https://n498.meraki.com/o/9tr4LaIb/manage/organization/summary"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
+                  <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -1108,6 +1108,69 @@
                 <!-- /.card-body -->
               </div>
             <!-- FIN DE TABLA CHIDA-->
+
+            <!--INICIO DE TABLECHIDA2-->
+            <div class="card">
+              <div class="card-header">
+                <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Dispositivos (click para más detalles)</h3></a>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>MAC</th>
+                    <th>Nombre</th>
+                    <th>Producto</th>
+                    <th>Serial</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <!--
+                      <td>OXXO 4.0 Sureste</td>
+                      <td>10OAX50RD6                    </td>
+                      <td>2023-02-20T10:17:57Z</td>
+                      <td>10.109.131.130: Status Failed</td>
+                      <td>192.168.7.2</td>
+                    </tr>
+                    
+                  -->
+
+                  <h2>{{ device.getDevices }}</h2>
+                    {% for device in device.getDevices %}
+                      <tr>
+                        <td>{{device.mac}}</td>
+                        <td>{{device.name}}</td>
+                        <td>{{device.productType}}</td>
+                        <td>{{device.serial}}</td>
+                        <td>{{device.status}}</td>
+                      </tr>
+                    {% endfor %}
+
+                  <!--
+                  <tr>
+                    <td>Presto</td>
+                    <td>Opera 7.0</td>
+                    <td>Win 95+ / OSX.1+</td>
+                    <td>-</td>
+                    <td>A</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                  </tr>-->
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          <!-- FIN DE TABLA CHIDA2-->
 
             <!-- /.card -->
 
