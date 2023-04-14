@@ -34,8 +34,8 @@ def APLICACIONES(request):
     return render(request, 'aplicaciones.html')
 
 def RED(request):
-    print("ACIIIIIIIII")
-    getACI()
+    #print("ACIIIIIIIII")
+    #getACI()
     return render(request, 'red.html')
 
 class link:
