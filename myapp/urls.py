@@ -28,6 +28,7 @@ urlpatterns = [
     path('OXXO_PREMIA', views.OXXO_PREMIA, name='OXXO_PREMIA'),
     path('RETIROS', views.RETIROS, name='RETIROS'),
     path('RETIROS_SIN_TARJETA', views.RETIROS_SIN_TARJETA, name='RETIROS_SIN_TARJETA'),
+    path('TIENDAS', views.TIENDAS, name='TIENDAS'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

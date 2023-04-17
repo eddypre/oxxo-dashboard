@@ -24,6 +24,9 @@ from django.template import Template, Context
 def BASE(request):
     return render(request, 'base.html', {"links":getLinks()})
 
+def TIENDAS(request):
+    return render(request, 'tiendas.html', {"links":getLinks()})
+
 def SEGURIDAD(request):
     return render(request, 'seguridad.html')
 

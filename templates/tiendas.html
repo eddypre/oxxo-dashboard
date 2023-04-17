@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <!--<meta http-equiv="refresh" content="60">-->
+  <meta http-equiv="refresh" content="60">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OXXO | Dashboard</title>
+  <title>Dashboard</title>
 
   <!--table-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -45,7 +46,8 @@
 
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTELogo" height="60" width="60">
+    <!--<img class="animation__shake" src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTELogo" height="60" width="60">-->
+    <img class="animation__shake" src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" alt="AdminLTELogo" height="60" width="60">
   </div>
 
   <!-- Navbar -->
@@ -202,7 +204,9 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <!--<img src="{% static 'assets/dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">-->
-          <img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" class="img-circle elevation-2" alt="User Image">
+          <!--<img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" class="img-circle elevation-2" alt="User Image">-->
+          <img src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" class="img-circle elevation-2" alt="User Image">
+          
         </div>
         <div class="info">
           <a href="#" class="d-block">Status Dashboard</a>
@@ -224,27 +228,121 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          
-          <li class="nav-item">
-            <a href="{% static 'assets/pages/widgets.html' %}" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <!--
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                <!--Widgets-->
-                Aplicaciones
-                <span class="right badge badge-danger">44</span>
-              </p>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-chart-pie"></i>
-              <p>
-                Vulnerabilidades
+                Dashboard
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="./index.html" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v1</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Dashboard v3</p>
+                </a>
+              </li>
+            </ul>
+          </li>-->
+          <li class="nav-item">
+            <!--<a href="{% static 'assets/pages/widgets.html' %}" class="nav-link">-->
+              <a href="{% url 'APLICACIONES' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                <!--Widgets-->
+                Aplicaciones
+                <!--<span class="right badge badge-danger">44</span>-->
+              </p>
+            </a>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Layout Options
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/top-nav.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/top-nav-sidebar.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Top Navigation + Sidebar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/boxed.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Boxed</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/fixed-sidebar.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Sidebar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/fixed-sidebar-custom.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Sidebar <small>+ Custom Area</small></p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/fixed-topnav.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Navbar</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/fixed-footer.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fixed Footer</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/layout/collapsed-sidebar.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Collapsed Sidebar</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+        -->
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'SEGURIDAD' %}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Vulnerabilidades
+                <!--<i class="right fas fa-angle-left"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{% static 'assets/pages/charts/chartjs.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -269,17 +367,18 @@
                   <p>uPlot</p>
                 </a>
               </li>
-            </ul>
+            </ul>-->
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'INTERNET' %}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 WAN
-                <i class="fas fa-angle-left right"></i>
+                <!--<i class="fas fa-angle-left right"></i>-->
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!--<ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{% static 'assets/pages/UI/general.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -299,60 +398,61 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/UI/sliders.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/UI/sliders.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Sliders</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/UI/modals.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/UI/modals.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Modals & Alerts</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/UI/navbar.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/UI/navbar.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Navbar & Tabs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/UI/timeline.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/UI/timeline.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Timeline</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/UI/ribbons.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/UI/ribbons.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ribbons</p>
                 </a>
               </li>
-            </ul>
+            </ul>-->
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+              <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'RED' %}" class="nav-link">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Red
-                <i class="fas fa-angle-left right"></i>
+                <!--<i class="fas fa-angle-left right"></i>-->
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!--<ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{% static 'pages/forms/general.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/forms/general.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>General Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/forms/advanced.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/forms/advanced.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Advanced Elements</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% static 'pages/forms/editors.html' %}" class="nav-link">
+                <a href="{% static 'assets/pages/forms/editors.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Editors</p>
                 </a>
@@ -363,17 +463,18 @@
                   <p>Validation</p>
                 </a>
               </li>
-            </ul>
+            </ul>-->
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+              <a href="#" class="nav-link">
+              <!--<a href="{% url 'TIENDAS' %}" class="nav-link">-->
               <i class="nav-icon fas fa-table"></i>
               <p>
                 Tiendas
-                <i class="fas fa-angle-left right"></i>
+                <!--<i class="fas fa-angle-left right"></i>-->
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!--<ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{% static 'assets/pages/tables/simple.html' %}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -392,9 +493,368 @@
                   <p>jsGrid</p>
                 </a>
               </li>
+            </ul>-->
+          </li>
+          <!--
+          <li class="nav-header">EXAMPLES</li>
+          <li class="nav-item">
+            <a href="{% static 'assets/pages/calendar.html' %}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Calendar
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% static 'assets/pages/gallery.html' %}" class="nav-link">
+              <i class="nav-icon far fa-image"></i>
+              <p>
+                Gallery
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% static 'assets/pages/kanban.html' %}" class="nav-link">
+              <i class="nav-icon fas fa-columns"></i>
+              <p>
+                Kanban Board
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-envelope"></i>
+              <p>
+                Mailbox
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/mailbox/mailbox.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inbox</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/mailbox/compose.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Compose</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/mailbox/read-mail.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Read</p>
+                </a>
+              </li>
             </ul>
           </li>
-          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Pages
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/invoice.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Invoice</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/profile.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Profile</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/e-commerce.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>E-commerce</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/projects.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Projects</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/project-add.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Add</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/project-edit.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Edit</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/project-detail.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Project Detail</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/contacts.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contacts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/faq.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>FAQ</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/contact-us.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Contact us</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Login & Register v1
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/login.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Login v1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/register.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Register v1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/forgot-password.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Forgot Password v1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/recover-password.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Recover Password v1</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Login & Register v2
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/login-v2.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Login v2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/register-v2.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Register v2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/forgot-password-v2.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Forgot Password v2</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{% static 'assets/pages/examples/recover-password-v2.html' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Recover Password v2</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/lockscreen.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lockscreen</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/legacy-user-menu.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Legacy User Menu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/language-menu.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Language Menu</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/404.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Error 404</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/500.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Error 500</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/pace.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pace</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/examples/blank.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Blank Page</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="starter.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Starter Page</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-search"></i>
+              <p>
+                Search
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/search/simple.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Simple Search</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/search/enhanced.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Enhanced</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          -->
+          <!--
+          <li class="nav-header">MISCELLANEOUS</li>
+          <li class="nav-item">
+            <a href="iframe.html" class="nav-link">
+              <i class="nav-icon fas fa-ellipsis-h"></i>
+              <p>Tabbed IFrame Plugin</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+              <i class="nav-icon fas fa-file"></i>
+              <p>Documentation</p>
+            </a>
+          </li>
+          <li class="nav-header">MULTI LEVEL EXAMPLE</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>Level 1</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-circle"></i>
+              <p>
+                Level 1
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Level 2</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>
+                    Level 2
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-dot-circle nav-icon"></i>
+                      <p>Level 3</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Level 2</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-circle nav-icon"></i>
+              <p>Level 1</p>
+            </a>
+          </li>
+        -->
           <li class="nav-header">LABELS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -441,93 +901,201 @@
     </div>
     <!-- /.content-header -->
 
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
 
-            <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-danger">
-                  <div class="inner">
-                    <h3>Tiendas</h3>
-    
-                    <p>Important</p>
-                    <!--<p>Unique Visitors</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                  </div>
-                  <!--<a href="/templates/tiendas.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-                  <a href="{% url 'BASE' %}" class="small-box-footer">More infor <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-              </div>  
 
-              <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-danger">
-                  <div class="inner">
-                    <h3>Internet</h3>
-    
-                    <p>Important</p>
-                    <!--<p>Unique Visitors</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                  </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-              </div>
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h4><b>Tiendas</b></h4>
 
-              <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                  <div class="inner">
-                    <h3>Aplicaciones</h3>
-    
-                    <p>Warning</p>
-                    <!--<p>User Registrations</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                  </div>
-                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-                  <a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
+                <p>Important</p>
+                <!--<p>User Registrations</p>-->
               </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h4><b>Internet</b></h4>
+
+                <p>Informational</p>
+                <!--<p>User Registrations</p>-->
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'CEDIS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+            </div>
+          </div>
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>Seguridad</h3>
+                <h4><b>Aplicaciones</b></h4>
 
-                <!--<p>New Orders</p>-->
                 <p>Warning</p>
+                <!--<p>User Registrations</p>-->
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'BACK_OFFICE' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
             </div>
           </div>
-          <!-- ./col -->
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="small-box bg-danger">
               <div class="inner">
-                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
-                <h3>Red</h3>
-                <!--<p>Bounce Rate</p>-->
-                <p>Informational</p>
+                <h4><b>Seguridad</b></h4>
+
+                <p>Important</p>
+                <!--<p>User Registrations</p>-->
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'OTROS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="% url 'SEGURIDAD' %" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h4><b>Red</b></h4>
+
+                <p>Warning</p>
+                <!--<p>User Registrations</p>-->
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'OTROS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <!--<div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--{{ links.7.status }} {{links.7.ip}}-->
+            <!--
+            {% if links.7.status != "active" %}
+              <div class="small-box bg-danger">
+            {% else %}
+              <div class="small-box bg-success">
+            {% endif %}-->
+            <!--{% for link in links %}
+              {{link.ip}}<br>
+            {% endfor %} -->
+            <!--<div class="small-box bg-danger">-->
+              <!--<div class="inner">
+                <h4><b>Tiendas</b></h4>
+                {% if links.7.status != "active" %}
+                  <p>Important</p>
+                {% else %}
+                  <p>Informational</p>
+                {% endif %}-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>  -->
+
+              <!--<div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-danger">-->
+                  <!--<div class="small-box bg-success">
+                  <div class="inner">
+                    <h4><b>Internet</b></h4>
+    
+                    <p>Informational</p>-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>-->
+                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-warning">
+                  <div class="inner">
+                    <h4><b>Aplicaciones</b></h4>
+    
+                    <p>Warning</p>-->
+                    <!--<p>User Registrations</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>-->
+                  <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+                </div>
+              </div>
+
+          <div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-danger">
+              <div class="inner">
+                <h4><b>Seguridad</b></h4>-->
+
+                <!--<p>New Orders</p>-->
+                <!--<p>Important</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>-->
+              <!--<a href="{% static 'assets/pages/UI/seguridad.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'SEGURIDAD' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>-->
+          <!-- ./col -->
+          <!--<div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-success">-->
+              <!--<div class="small-box bg-warning">
+              <div class="inner">-->
+                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
+                <!--<h4><b>Red</b></h4>-->
+                <!--<p>Bounce Rate</p>-->
+                <!--<p>Warning</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+            <!--</div>-->
+          <!--</div>-->
           <!-- ./col -->
           
           <!-- ./col -->
@@ -537,256 +1105,650 @@
           
           <!-- ./col -->
         </div>
-        
+        <!-- /.row -->
+        <!-- Main row -->
+        <!--
+        <div class="row">-->
+          <!-- Left col -->
+          <!--
+          <section class="col-lg-7 connectedSortable">-->
+            <!-- Custom tabs (Charts with tabs)-->
+            <!--<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="fas fa-chart-pie mr-1"></i>
+                  Sales
+                </h3>
+                <div class="card-tools">
+                  <ul class="nav nav-pills ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>--><!-- /.card-header -->
+              <!--
+              <div class="card-body">
+                <div class="tab-content p-0">-->
+                  <!-- Morris chart - Sales -->
+                  <!--
+                  <div class="chart tab-pane active" id="revenue-chart"
+                       style="position: relative; height: 300px;">
+                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                   </div>
+                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
+                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                  </div>
+                </div>
+              </div>--><!-- /.card-body -->
+            <!--</div>-->
+
+            <!--INICIO DE EXPERIMENTO-->
+            
+            <!--FIN DE EXPERIMENTO-->
+
             <!--INICIO DE TABLECHIDA-->
+            <!--
             <div class="card">
                 <div class="card-header">
-                  <a href="https://tet-pov-rtp1.cpoc.co/#/search-flows?t0=1676629800&t1=1676651400&load0=1676629800&load1=1676651400&load_metric=count&topn_cat=HOST_NAME&chips=W10-&size=20&sampled=false&explore=false&corpus_metric_index=0"><h3 class="card-title">Información de Internet (click para más detalles)</h3></a>
-                </div>
+                  <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
+                </div>-->
                 <!-- /.card-header -->
-                <div class="card-body">
+                <!--<div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                      <th>Timestamp</th>
-                      <th>Consumer Name</th>
-                      <th>Provider Name</th>
-                      <th>Consume Address</th>
-                      <th>Provider Address</th>
-                      <th>Consumer Port</th>
-                      <th>Provider Port</th>
-                      <th>Protocol</th>
+                      <th>Organization</th>
+                      <th>Network</th>
+                      <th>Last Report</th>
+                      <th>Status</th>
+                      <th>IP address</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody>-->
+                      <!--
+                        <td>OXXO 4.0 Sureste</td>
+                        <td>10OAX50RD6                    </td>
+                        <td>2023-02-20T10:17:57Z</td>
+                        <td>10.109.131.130: Status Failed</td>
+                        <td>192.168.7.2</td>
+                      </tr>
+                    -->
+
+                      <!--{% with counter=0 %}-->
+                      <!--{% for link in links %}-->
+                        <!--{% if link.status != "active" %}
+                          {{ counter|add:"1" }}
+                        {% endif %}-->
+                        <!--<tr>
+                          <td>CPOC 2023</td>
+                          <td>{{link.network}}</td>
+                          <td>{{link.lastReportedAt}}</td>
+                          <td>{{link.interface}}: {{link.status}}</td>
+                          <td>{{link.ip}}</td>
+                        </tr>
+                      {% endfor %}-->
+                      <!--{% endwith %}-->
+
+                    <!--
                     <tr>
-                      <td>Feb 17 4:30:00am</td>
-                      <td>Unknown</td>
-                      <td>Unknown</td>
-                      <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                      <td>ff02::1:3</td>
-                      <td>53717</td>
-                      <td>5355</td>
-                      <td>UDP</td>
+                      <td>Presto</td>
+                      <td>Opera 7.0</td>
+                      <td>Win 95+ / OSX.1+</td>
+                      <td>-</td>
+                      <td>A</td>
                     </tr>
+                    </tbody>
+                    <tfoot>
                     <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                        <td>ff02::1:3</td>
-                        <td>64239</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                        <td>ff02::1:3</td>
-                        <td>54931</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                        <td>ff02::1:3</td>
-                        <td>55197</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                        <td>ff02::1:3</td>
-                        <td>59430</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>172.16.7.147</td>
-                        <td>172.16.7.255</td>
-                        <td>138</td>
-                        <td>138</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>172.16.7.185</td>
-                        <td>224.0.0.252</td>
-                        <td>50728</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>fe80::5961:d1f0:a0b3:9a5c</td>
-                        <td>ff02::1:3</td>
-                        <td>54185</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                      <tr>
-                        <td>Feb 17 4:30:00am</td>
-                        <td>Unknown</td>
-                        <td>Unknown</td>
-                        <td>172.16.7.185</td>
-                        <td>224.0.0.252</td>
-                        <td>49217</td>
-                        <td>5355</td>
-                        <td>UDP</td>
-                      </tr>
-                    </tfoot>
+                      <th>Rendering engine</th>
+                      <th>Browser</th>
+                      <th>Platform(s)</th>
+                      <th>Engine version</th>
+                      <th>CSS grade</th>
+                    </tr>-->
+                    <!--</tfoot>
                   </table>
-                </div>
+                </div>-->
                 <!-- /.card-body -->
-              </div>
+              <!--</div>-->
             <!-- FIN DE TABLA CHIDA-->
+
+            <!--INICIO DE TABLECHIDA2-->
+            <!--
+            <div class="card">
+              <div class="card-header">
+                <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Dispositivos (click para más detalles)</h3></a>
+              </div>-->
+              <!-- /.card-header -->
+              <!--<div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>MAC</th>
+                    <th>Nombre</th>
+                    <th>Producto</th>
+                    <th>Serial</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>-->
+                    <!--
+                      <td>OXXO 4.0 Sureste</td>
+                      <td>10OAX50RD6                    </td>
+                      <td>2023-02-20T10:17:57Z</td>
+                      <td>10.109.131.130: Status Failed</td>
+                      <td>192.168.7.2</td>
+                    </tr>
+                    
+                  -->
+
+                  <!--<h2>{{ device.getDevices }}</h2>
+                    {% for device in device.getDevices %}
+                      <tr>
+                        <td>{{device.mac}}</td>
+                        <td>{{device.name}}</td>
+                        <td>{{device.productType}}</td>
+                        <td>{{device.serial}}</td>
+                        <td>{{device.status}}</td>
+                      </tr>
+                    {% endfor %}-->
+
+                  <!--
+                  <tr>
+                    <td>Presto</td>
+                    <td>Opera 7.0</td>
+                    <td>Win 95+ / OSX.1+</td>
+                    <td>-</td>
+                    <td>A</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                  </tr>-->
+                  <!--</tfoot>
+                </table>
+              </div>-->
+              <!-- /.card-body -->
+            <!--</div>-->
+          <!-- FIN DE TABLA CHIDA2-->
 
             <!-- /.card -->
 
-
-            <!-- INICIO DE TABLA EXPANDABLE-->
-            <div class="row">
-              <div class="col-12">
-                <div class="card">
-                  <div class="card-header">
-                    <h3 class="card-title"><a href="https://tet-pov-rtp1.cpoc.co/#/vulnerabilities?scope_id=63bc4747497d4f7ff5a89fe2&cve_type=v2&tab=cves">Información de Vulnerabilidades (click para más detalles)</a></h3>
-                  </div>
-                  <!-- ./card-header -->
-                  <div class="card-body">
-                    <table class="table table-bordered table-hover">
-                      <thead>
-                        <tr>
-                          <th>CVE</th>
-                          <th>Score</th>
-                          <th>Severity</th>
-                          <th>Access Vector</th>
-                          <th>Authentication</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2017-0254</td>
-                          <td>9.3</td>
-                          <td>HIGH</td>
-                          <td>NETWORK</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-0254">https://nvd.nist.gov/vuln/detail/CVE-2017-0254</a>
-                              <br>Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-                              Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>CVE-2017-8501</td>
-                          <td>9.3</td>
-                          <td>HIGH</td>
-                          <td>NETWORRK</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-8501">https://nvd.nist.gov/vuln/detail/CVE-2017-8501</a><br>
-Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>CVE-2016-7274</td>
-                          <td>9.3</td>
-                          <td>HIGH</td>
-                          <td>NETWORK</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2016-7274">https://nvd.nist.gov/vuln/detail/CVE-2016-7274</a><br>
-Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2016-7276</td>
-                          <td>5.8</td>
-                          <td>MEDIUM</td>
-                          <td>NETWORL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2016-7276">https://nvd.nist.gov/vuln/detail/CVE-2016-7276</a><br>
-Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2016-7257</td>
-                          <td>4.3</td>
-                          <td>MEDIUM</td>
-                          <td>NETWORK</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2016-7257">https://nvd.nist.gov/vuln/detail/CVE-2016-7257</a><br>
-Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2017-8676</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-8676"></a>https://nvd.nist.gov/vuln/detail/CVE-2017-8676<br>
-Affected packages: Office 16 Click-to-Run Extensibility Component 64-bit Registration-16.0.15726.20202, Office 16 Click-to-Run Extensibility Component-16.0.15726.20202, Office 16 Click-to-Run Licensing Component-16.0.16026.20146, Office 16 Click-to-Run Localization Component-16.0.12527.22270
-Affected workloads: Test01
-                            </p>
-                          </td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
-                  </div>
-                  <!-- /.card-body -->
+            <!-- DIRECT CHAT -->
+            <!--
+            <div class="card direct-chat direct-chat-primary">
+              <div class="card-header">
+                <h3 class="card-title">Direct Chat</h3>
+                <div class="card-tools">
+                  <span title="3 New Messages" class="badge badge-primary">3</span>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+                    <i class="fas fa-comments"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
                 </div>
-                <!-- /.card -->
-              </div>
-            </div>
-            <!-- FIN DE TABLA EXPANDABLE-->
+              </div>-->
+              <!-- /.card-header -->
+              <!--<div class="card-body">-->
+                <!-- Conversations are loaded here -->
+                <!--<div class="direct-chat-messages">-->
+                  <!-- Message. Default to the left -->
+                  <!--<div class="direct-chat-msg">
+                    <div class="direct-chat-infos clearfix">
+                      <span class="direct-chat-name float-left">Alexander Pierce</span>
+                      <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                    </div>-->
+                    <!-- /.direct-chat-infos -->
+                    <!--<img class="direct-chat-img" src="{% static 'assets/dist/img/user1-128x128.jpg' %}" alt="message user image">-->
+                    <!-- /.direct-chat-img -->
+                    <!--
+                    <div class="direct-chat-text">
+                      Is this template really for free? That's unbelievable!
+                    </div>-->
+                    <!-- /.direct-chat-text -->
+                  <!--</div>-->
+                  <!-- /.direct-chat-msg -->
 
-            
+                  <!-- Message to the right -->
+                  <!--<div class="direct-chat-msg right">
+                    <div class="direct-chat-infos clearfix">
+                      <span class="direct-chat-name float-right">Sarah Bullock</span>
+                      <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                    </div>-->
+                    <!-- /.direct-chat-infos -->
+                    <!--<img class="direct-chat-img" src="{% static 'assets/dist/img/user3-128x128.jpg' %}" alt="message user image">-->
+                    <!-- /.direct-chat-img -->
+                    <!--<div class="direct-chat-text">
+                      You better believe it!
+                    </div>-->
+                    <!-- /.direct-chat-text -->
+                  <!--</div>-->
+                  <!-- /.direct-chat-msg -->
+
+                  <!-- Message. Default to the left -->
+                  <!--<div class="direct-chat-msg">
+                    <div class="direct-chat-infos clearfix">
+                      <span class="direct-chat-name float-left">Alexander Pierce</span>
+                      <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
+                    </div>-->
+                    <!-- /.direct-chat-infos -->
+                    <!--<img class="direct-chat-img" src="{% static 'assets/dist/img/user1-128x128.jpg' %}" alt="message user image">-->
+                    <!-- /.direct-chat-img -->
+                    <!--<div class="direct-chat-text">
+                      Working with AdminLTE on a great new app! Wanna join?
+                    </div>-->
+                    <!-- /.direct-chat-text -->
+                  <!--</div>-->
+                  <!-- /.direct-chat-msg -->
+
+                  <!-- Message to the right -->
+                  <!--<div class="direct-chat-msg right">
+                    <div class="direct-chat-infos clearfix">
+                      <span class="direct-chat-name float-right">Sarah Bullock</span>
+                      <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
+                    </div>-->
+                    <!-- /.direct-chat-infos -->
+                    <!--<img class="direct-chat-img" src="{% static 'assets/dist/img/user3-128x128.jpg' %}" alt="message user image">-->
+                    <!-- /.direct-chat-img -->
+                    <!--<div class="direct-chat-text">
+                      I would love to.
+                    </div>-->
+                    <!-- /.direct-chat-text -->
+                  <!--</div>-->
+                  <!-- /.direct-chat-msg -->
+
+                <!--</div>-->
+                <!--/.direct-chat-messages-->
+
+                <!-- Contacts are loaded here -->
+                <!--<div class="direct-chat-contacts">
+                  <ul class="contacts-list">
+                    <li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user1-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Count Dracula
+                            <small class="contacts-list-date float-right">2/28/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">How have you been? I was...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                    <!--<li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user7-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Sarah Doe
+                            <small class="contacts-list-date float-right">2/23/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">I will be waiting for...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                    <!--<li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user3-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Nadia Jolie
+                            <small class="contacts-list-date float-right">2/20/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">I'll call you back at...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                    <!--<li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user5-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Nora S. Vans
+                            <small class="contacts-list-date float-right">2/10/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">Where is your new...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                    <!--<li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user6-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            John K.
+                            <small class="contacts-list-date float-right">1/27/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">Can I take a look at...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                    <!--<li>
+                      <a href="#">
+                        <img class="contacts-list-img" src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar">
+                        <div class="contacts-list-info">
+                          <span class="contacts-list-name">
+                            Kenneth M.
+                            <small class="contacts-list-date float-right">1/4/2015</small>
+                          </span>
+                          <span class="contacts-list-msg">Never mind I found...</span>
+                        </div>-->
+                        <!-- /.contacts-list-info -->
+                      <!--</a>
+                    </li>-->
+                    <!-- End Contact Item -->
+                  <!--</ul>-->
+                  <!-- /.contacts-list -->
+                <!--</div>-->
+                <!-- /.direct-chat-pane -->
+              <!--</div>-->
+              <!-- /.card-body -->
+              <!--<div class="card-footer">
+                <form action="#" method="post">
+                  <div class="input-group">
+                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                    <span class="input-group-append">
+                      <button type="button" class="btn btn-primary">Send</button>
+                    </span>
+                  </div>
+                </form>
+              </div>-->
+              <!-- /.card-footer-->
+            <!--</div>-->
+            <!--/.direct-chat -->
+
+            <!-- TO DO List -->
+            <!--<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="ion ion-clipboard mr-1"></i>
+                  To Do List
+                </h3>
+                <div class="card-tools">
+                  <ul class="pagination pagination-sm">
+                    <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
+                    <li class="page-item"><a href="#" class="page-link">1</a></li>
+                    <li class="page-item"><a href="#" class="page-link">2</a></li>
+                    <li class="page-item"><a href="#" class="page-link">3</a></li>
+                    <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div>-->
+              <!-- /.card-header -->
+              <!--
+              <div class="card-body">
+                <ul class="todo-list" data-widget="todo-list">
+                  <li>-->
+                    <!-- drag handle -->
+                    <!--<span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>-->
+                    <!-- checkbox -->
+                    <!--<div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo1" id="todoCheck1">
+                      <label for="todoCheck1"></label>
+                    </div>-->
+                    <!-- todo text -->
+                    <!--<span class="text">Design a nice theme</span>-->
+                    <!-- Emphasis label -->
+                    <!--<small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>-->
+                    <!-- General tools such as edit or delete-->
+                    <!--<div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo2" id="todoCheck2" checked>
+                      <label for="todoCheck2"></label>
+                    </div>
+                    <span class="text">Make the theme responsive</span>
+                    <small class="badge badge-info"><i class="far fa-clock"></i> 4 hours</small>
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo3" id="todoCheck3">
+                      <label for="todoCheck3"></label>
+                    </div>
+                    <span class="text">Let theme shine like a star</span>
+                    <small class="badge badge-warning"><i class="far fa-clock"></i> 1 day</small>
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo4" id="todoCheck4">
+                      <label for="todoCheck4"></label>
+                    </div>
+                    <span class="text">Let theme shine like a star</span>
+                    <small class="badge badge-success"><i class="far fa-clock"></i> 3 days</small>
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo5" id="todoCheck5">
+                      <label for="todoCheck5"></label>
+                    </div>
+                    <span class="text">Check your messages and notifications</span>
+                    <small class="badge badge-primary"><i class="far fa-clock"></i> 1 week</small>
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="handle">
+                      <i class="fas fa-ellipsis-v"></i>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </span>
+                    <div  class="icheck-primary d-inline ml-2">
+                      <input type="checkbox" value="" name="todo6" id="todoCheck6">
+                      <label for="todoCheck6"></label>
+                    </div>
+                    <span class="text">Let theme shine like a star</span>
+                    <small class="badge badge-secondary"><i class="far fa-clock"></i> 1 month</small>
+                    <div class="tools">
+                      <i class="fas fa-edit"></i>
+                      <i class="fas fa-trash-o"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>-->
+              <!-- /.card-body -->
+              <!--<div class="card-footer clearfix">
+                <button type="button" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Add item</button>
+              </div>
+            </div>-->
+            <!-- /.card -->
+          <!--</section>-->
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <!--<section class="col-lg-5 connectedSortable">-->
+
+            <!-- Map card -->
+            <!--
+            <div class="card bg-gradient-primary">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="fas fa-map-marker-alt mr-1"></i>
+                  Visitors
+                </h3>-->
+                <!-- card tools -->
+                <!--
+                <div class="card-tools">
+                  <button type="button" class="btn btn-primary btn-sm daterange" title="Date range">
+                    <i class="far fa-calendar-alt"></i>
+                  </button>
+                  <button type="button" class="btn btn-primary btn-sm" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>-->
+                <!-- /.card-tools -->
+              <!--</div>
+              <div class="card-body">
+                <div id="world-map" style="height: 250px; width: 100%;"></div>
+              </div>-->
+              <!-- /.card-body-->
+              <!--
+              <div class="card-footer bg-transparent">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <div id="sparkline-1"></div>
+                    <div class="text-white">Visitors</div>
+                  </div>-->
+                  <!-- ./col -->
+                  <!--<div class="col-4 text-center">
+                    <div id="sparkline-2"></div>
+                    <div class="text-white">Online</div>
+                  </div>-->
+                  <!-- ./col -->
+                  <!--<div class="col-4 text-center">
+                    <div id="sparkline-3"></div>
+                    <div class="text-white">Sales</div>
+                  </div>-->
+                  <!-- ./col -->
+                <!--</div>-->
+                <!-- /.row -->
+              <!--</div>-->
+            <!--</div>-->
+            <!-- /.card -->
+
+            <!-- solid sales graph -->
+            <!--<div class="card bg-gradient-info">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="fas fa-th mr-1"></i>
+                  Sales Graph
+                </h3>
+                <div class="card-tools">
+                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas class="chart" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>-->
+              <!-- /.card-body -->
+              <!--<div class="card-footer bg-transparent">
+                <div class="row">
+                  <div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+                    <div class="text-white">Mail-Orders</div>
+                  </div>-->
+                  <!-- ./col -->
+                  <!--<div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+                    <div class="text-white">Online</div>
+                  </div>-->
+                  <!-- ./col -->
+                  <!--<div class="col-4 text-center">
+                    <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60"
+                           data-fgColor="#39CCCC">
+                    <div class="text-white">In-Store</div>
+                  </div>-->
+                  <!-- ./col -->
+                <!--</div>-->
+                <!-- /.row -->
+              <!--</div>-->
+              <!-- /.card-footer -->
+            <!--</div>-->
+            <!-- /.card -->
+
+            <!-- Calendar -->
+            <!--
+            <div class="card bg-gradient-success">
+              <div class="card-header border-0">
+                <h3 class="card-title">
+                  <i class="far fa-calendar-alt"></i>
+                  Calendar
+                </h3>-->
+                <!-- tools card -->
+                <!--<div class="card-tools">-->
+                  <!-- button with a dropdown -->
+                  <!--<div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" data-offset="-52">
+                      <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="dropdown-menu" role="menu">
+                      <a href="#" class="dropdown-item">Add new event</a>
+                      <a href="#" class="dropdown-item">Clear events</a>
+                      <div class="dropdown-divider"></div>
+                      <a href="#" class="dropdown-item">View calendar</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-success btn-sm" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-success btn-sm" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>-->
+                <!-- /. tools -->
+              <!--</div>-->
+              <!-- /.card-header -->
+              <!--<div class="card-body pt-0">-->
+                <!--The calendar -->
+                <!--<div id="calendar" style="width: 100%"></div>
+              </div>-->
+              <!-- /.card-body -->
+            <!--</div>-->
+            <!-- /.card -->
           </section>
           <!-- right col -->
         </div>
@@ -847,6 +1809,12 @@ Affected workloads: Test01
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{% static 'assets/dist/js/pages/dashboard.js' %}"></script>
 
+<!--scriptstable-->
+<!-- jQuery -->
+<!--<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>-->
+<!-- Bootstrap 4 -->
+<!--<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>-->
+<!-- DataTables  & Plugins -->
 <script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
 <script src="{% static 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
 <script src="{% static 'assets/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
@@ -859,7 +1827,11 @@ Affected workloads: Test01
 <script src="{% static 'assets/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
 <script src="{% static 'assets/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
 <script src="{% static 'assets/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
-
+<!-- AdminLTE App -->
+<!--<script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>-->
+<!-- AdminLTE for demo purposes -->
+<!--<script src="{% static 'assets/dist/js/demo.js' %}"></script>-->
+<!--scriptstable-->
 
 <script>
     $(function () {
