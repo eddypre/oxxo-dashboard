@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="60">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+
+  <!--table-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css' %}">
+  <!--table-->
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/jqvmap/jqvmap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.min.css' %}">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <!--<img class="animation__shake" src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTELogo" height="60" width="60">-->
+    <img class="animation__shake" src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="." class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admin
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 1</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admim
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 2</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admin
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 3</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 8 new reports
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <!--
+    <a href="." class="brand-link">
+      <img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="Oxxo" class="brand-image img-circle elevation-2">
+      <span class="brand-text font-weight-light">&nbsp;OXXO</span>
+    </a>-->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <!--<img src="{% static 'assets/dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">-->
+          <!--<img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" class="img-circle elevation-2" alt="User Image">-->
+          <img src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Status Dashboard</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+          <li class="nav-item">
+            <!--<a href="{% static 'assets/pages/widgets.html' %}" class="nav-link">-->
+              <a href="{% url 'APLICACIONES' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                <!--Widgets-->
+                Aplicaciones
+                <!--<span class="right badge badge-danger">44</span>-->
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'SEGURIDAD' %}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Vulnerabilidades
+                <!--<i class="right fas fa-angle-left"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/chartjs.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ChartJS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/flot.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Flot</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/inline.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/uplot.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>uPlot</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'INTERNET' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                WAN
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/general.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/icons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Icons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/buttons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buttons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/sliders.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/modals.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Modals & Alerts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/navbar.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Navbar & Tabs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/timeline.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Timeline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/ribbons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ribbons</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'RED' %}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Red
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/general.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/advanced.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Advanced Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/editors.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Editors</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/forms/validation.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Validation</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'BASE' %}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tiendas
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/simple.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Simple Tables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/data.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>DataTables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/jsgrid.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>jsGrid</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          
+          <li class="nav-header">LABELS</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Important</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Warning</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-success"></i>
+              <p>Informational</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">TAE</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+
+          <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h4><b>Corresponsalías</b></h4>
+  
+                  <p>Important</p>
+                  <!--<p>Unique Visitors</p>-->
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <!--<a href="/templates/tiendas.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                <a href="{% url 'CORRESPONSALIAS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>  
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <!--<div class="small-box bg-danger">-->
+                <div class="small-box bg-success">
+                <div class="inner">
+                  <h4><b>Envíos</b></h4>
+  
+                  <p>Informational</p>
+                  <!--<p>Unique Visitors</p>-->
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="{% url 'ENVIOS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h4><b>Remesas</b></h4>
+  
+                  <p>Warning</p>
+                  <!--<p>User Registrations</p>-->
+                </div>
+                <div class="icon">
+                  <i class="ion ion-person-add"></i>
+                </div>
+                <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                <a href="{% url 'REMESAS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              </div>
+            </div>
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h4><b>Pago TDC</b></h4>
+
+              <!--<p>New Orders</p>-->
+              <p>Important</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'PAGO_TDC' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <!--<div class="small-box bg-success">-->
+            <div class="small-box bg-warning">
+            <div class="inner">
+              <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
+              <h4><b>Autenticación de cajeros</b></h4>
+              <!--<p>Bounce Rate</p>-->
+              <p>Warning</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'AUTENTICACION_DE_CAJEROS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h4><b>Spin</b></h4>
+
+              <!--<p>New Orders</p>-->
+              <p>Important</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'SPIN' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h4><b>OXXO Premia</b></h4>
+
+              <!--<p>New Orders</p>-->
+              <p>Important</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'OXXO_PREMIA' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h4><b>Retiros</b></h4>
+
+              <!--<p>New Orders</p>-->
+              <p>Important</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'RETIROS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+
+        <div class="col-lg-3 col-6">
+          <!-- small box -->
+          <div class="small-box bg-danger">
+            <div class="inner">
+              <h4><b>Retiros sin tarjeta</b></h4>
+
+              <!--<p>New Orders</p>-->
+              <p>Important</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="{% url 'RETIROS_SIN_TARJETA' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        
+        <!-- ./col -->
+
+        <!-- ./col -->
+        <!-- ./col -->
+        
+        <!-- ./col -->
+      </div>
+        
+            <!--INICIO DE TABLECHIDA-->
+            <!--<div class="card">-->
+              <!--<iframe src="https://demo1.saas.appdynamics.com/controller/dashboards.jsp?desktopView=true#/location=DASHBOARD_VIEWER&token=b902f596-02df-4184-98a0-11693e833072&timeRange=last_8_days.BEFORE_NOW.-1.-1.11520" style="border:none;" title="Tetration" height="600" width="100%"></iframe>-->
+                <!--
+                <div class="card-header">
+                  <a href="https://tet-pov-rtp1.cpoc.co/#/search-flows?t0=1676629800&t1=1676651400&load0=1676629800&load1=1676651400&load_metric=count&topn_cat=HOST_NAME&chips=W10-&size=20&sampled=false&explore=false&corpus_metric_index=0"><h3 class="card-title">Información de Flujos (click para más detalles)</h3></a>
+                </div>-->
+                <!-- /.card-header -->
+                <!--<div class="card-body">
+                  <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                    <tr>-->
+                      <!--<th>Timestamp</th>-->
+                      <!--<th>Consumer Name</th>
+                      <th>Provider Name</th>
+                      <th>Consumer Address</th>
+                      <th>Provider Address</th>
+                      <th>Consumer Port</th>
+                      <th>Provider Port</th>
+                      <th>Protocol</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-10</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.158</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-10</td>
+                      <td>mty-13</td>
+                      <td>192.168.80.160</td>
+                      <td>192.168.80.161</td>
+                      <td>0</td>
+                      <td>3306</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-13</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.161</td>
+                      <td>155.248.196.28</td>
+                      <td>0</td>
+                      <td>123</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-13</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.161</td>
+                      <td>64.100.1.197</td>
+                      <td>0</td>
+                      <td>443</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-09</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.157</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-11</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.159</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-12</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.160</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-08</td>
+                      <td>mty-09</td>
+                      <td>192.168.80.156</td>
+                      <td>192.168.80.157</td>
+                      <td>0</td>
+                      <td>3306</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-13</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.161</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-11</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.159</td>
+                      <td>64.100.1.203</td>
+                      <td>0</td>
+                      <td>5660</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-08</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.156</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-11</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.159</td>
+                      <td>64.100.1.197</td>
+                      <td>0</td>
+                      <td>443</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-13</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.161</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-12</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.160</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-09</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.157</td>
+                      <td>224.0.0.251</td>
+                      <td>5353</td>
+                      <td>5353</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-13</td>
+                      <td>Unknown</td>
+                      <td>192.168.80.161</td>
+                      <td>64.100.1.201</td>
+                      <td>0</td>
+                      <td>5660</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-08</td>
+                      <td>mty-09</td>
+                      <td>192.168.80.156</td>
+                      <td>192.168.80.157</td>
+                      <td>0</td>
+                      <td>3306</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>mty-10</td>
+                      <td>mty-11</td>
+                      <td>192.168.80.158</td>
+                      <td>192.168.80.159</td>
+                      <td>0</td>
+                      <td>3306</td>
+                      <td>TCP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>Unknown</td>
+                      <td>Unknown</td>
+                      <td>0.0.0.0</td>
+                      <td>255.255.255.255</td>
+                      <td>68</td>
+                      <td>67</td>
+                      <td>UDP</td>
+                    </tr>
+                    <tr>-->
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <!--<td>Unknown</td>
+                      <td>Unknown</td>
+                      <td>0.0.0.0</td>
+                      <td>255.255.255.255</td>
+                      <td>68</td>
+                      <td>67</td>
+                      <td>UDP</td>
+                    </tr>
+                    </tfoot>
+                  </table>
+                </div>-->
+                <!-- /.card-body -->
+              <!--</div>-->
+            <!-- FIN DE TABLA CHIDA-->
+
+            <!-- /.card -->
+
+
+            <!-- INICIO DE TABLA EXPANDABLE-->
+            <!--<div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title"><a href="https://tet-pov-rtp1.cpoc.co/#/vulnerabilities?scope_id=6437472f497d4f2929b5587f&cve_type=v2&tab=cves">Información de Vulnerabilidades (click para más detalles)</a></h3>
+                  </div>-->
+                  <!-- ./card-header -->
+                  <!--<div class="card-body">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>CVE</th>
+                          <th>Score</th>
+                          <th>Severity</th>
+                          <th>Access Vector</th>
+                          <th>Authentication</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2020-14309</td>
+                          <td>4.6</td>
+                          <td>MEDIUM</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14309"> https://access.redhat.com/security/cve/CVE-2020-14309</a>
+                              <br>Affected packages: wupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
+                              Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        <tr data-widget="expandable-table" aria-expanded="true">
+                          <td>CVE-2020-15707</td>
+                          <td>4.4</td>
+                          <td>MEDIUM</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15707">https://access.redhat.com/security/cve/CVE-2020-15707</a><br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        <tr data-widget="expandable-table" aria-expanded="true">
+                          <td>CVE-2020-15705</td>
+                          <td>4.4</td>
+                          <td>MEDIUM</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15705">https://access.redhat.com/security/cve/CVE-2020-15705</a><br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2020-14308</td>
+                          <td>4.4</td>
+                          <td>MEDIUM</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14308">https://access.redhat.com/security/cve/CVE-2020-14308</a><br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2020-15706</td>
+                          <td>4.3</td>
+                          <td>MEDIUM</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15706">https://access.redhat.com/security/cve/CVE-2020-15706</a><br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2018-14567</td>
+                          <td>4.3</td>
+                          <td>MEDIUM</td>
+                          <td>NETWORK</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2018-14567"></a>https://access.redhat.com/security/cve/CVE-2018-14567<br>
+Affected packages: libxml2-2.9.1-6.el7_9.6, libxml2-python-2.9.1-6.el7_9.6
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2021-25220</td>
+                          <td>4</td>
+                          <td>MEDIUM</td>
+                          <td>NETWORK</td>
+                          <td>SINGLE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2021-25220"></a>https://access.redhat.com/security/cve/CVE-2021-25220<br>
+Affected packages: bind-export-libs-9.11.4-26.P2.el7_9.9
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2020-14311</td>
+                          <td>3.6</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14311"></a>https://access.redhat.com/security/cve/CVE-2020-14311<br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2020-14310</td>
+                          <td>3.6</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14310"></a>https://access.redhat.com/security/cve/CVE-2020-14310<br>
+Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2022-21125</td>
+                          <td>2.1</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21125"></a>https://access.redhat.com/security/cve/CVE-2022-21125<br>
+Affected packages: kernel-3.10.0-1160.71.1.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2022-29900</td>
+                          <td>2.1</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-29900"></a>https://access.redhat.com/security/cve/CVE-2022-29900<br>
+Affected packages: kernel-3.10.0-1160.71.1.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2022-23825</td>
+                          <td>2.1</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-23825"></a>https://access.redhat.com/security/cve/CVE-2022-23825<br>
+Affected packages: kernel-3.10.0-1160.71.1.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+                        
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2022-21166</td>
+                          <td>2.1</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21166"></a>https://access.redhat.com/security/cve/CVE-2022-21166<br>
+Affected packages: kernel-3.10.0-1160.71.1.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>CVE-2022-21123</td>
+                          <td>2.1</td>
+                          <td>LOW</td>
+                          <td>LOCAL</td>
+                          <td>NONE</td>
+                        </tr>
+                        <tr class="expandable-body">
+                          <td colspan="5">
+                            <p>
+                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21123"></a>https://access.redhat.com/security/cve/CVE-2022-21123<br>
+Affected packages: kernel-3.10.0-1160.71.1.el7
+Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
+                            </p>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </div>-->
+                  <!-- /.card-body -->
+                <!--</div>-->
+                <!-- /.card -->
+              <!--</div>-->
+            <!--</div>-->
+            <!-- FIN DE TABLA EXPANDABLE-->
+
+            
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2023 <a href="https://oxxo.com">OXXO</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'assets/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'assets/plugins/chart.js/Chart.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'assets/plugins/sparklines/sparkline.js' %}"></script>
+<!-- JQVMap -->
+<script src="{% static 'assets/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+<script src="{% static 'assets/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'assets/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'assets/plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/plugins/daterangepicker/daterangepicker.js' %}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{% static 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<!-- Summernote -->
+<script src="{% static 'assets/plugins/summernote/summernote-bs4.min.js' %}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/dist/js/adminlte.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="{% static 'assets/dist/js/demo.js' %}"></script> -->
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'assets/dist/js/pages/dashboard.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'assets/plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+
+
+<script>
+    $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>

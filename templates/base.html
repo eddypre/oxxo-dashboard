@@ -888,7 +888,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            <h1 class="m-0">Servicios Críticos</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -901,109 +901,183 @@
     </div>
     <!-- /.content-header -->
 
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
 
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <!--{{ links.7.status }} {{links.7.ip}}-->
-            {% if links.7.status != "active" %}
-              <div class="small-box bg-danger">
-            {% else %}
-              <div class="small-box bg-success">
-            {% endif %}
-            <!--{% for link in links %}
-              {{link.ip}}<br>
-            {% endfor %} -->
-            <!--<div class="small-box bg-danger">-->
-              <div class="inner">
-                <h4><b>Tiendas</b></h4>
-                {% if links.7.status != "active" %}
-                  <p>Important</p>
-                {% else %}
-                  <p>Informational</p>
-                {% endif %}
-                    <!--<p>Unique Visitors</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                  </div>
-                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-              </div>  
-
-              <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <!--<div class="small-box bg-danger">-->
-                  <div class="small-box bg-success">
-                  <div class="inner">
-                    <h4><b>Internet</b></h4>
-    
-                    <p>Informational</p>
-                    <!--<p>Unique Visitors</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
-                  </div>
-                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-                  <a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                </div>
-              </div>
-
-              <div class="col-lg-3 col-6">
-                <!-- small box -->
-                <div class="small-box bg-warning">
-                  <div class="inner">
-                    <h4><b>Aplicaciones</b></h4>
-    
-                    <p>Warning</p>
-                    <!--<p>User Registrations</p>-->
-                  </div>
-                  <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                  </div>
-                  <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-                  <a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
-                </div>
-              </div>
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h4><b>Seguridad</b></h4>
+                <h4><b>Servicios Electrónicos</b></h4>
 
-                <!--<p>New Orders</p>-->
                 <p>Important</p>
+                <!--<p>User Registrations</p>-->
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <!--<a href="{% static 'assets/pages/UI/seguridad.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-              <a href="{% url 'SEGURIDAD' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="{% url 'SERVICIOS_ELECTRONICOS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
             </div>
           </div>
-          <!-- ./col -->
+
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <!--<div class="small-box bg-success">-->
-              <div class="small-box bg-warning">
+            <div class="small-box bg-success">
               <div class="inner">
-                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
-                <h4><b>Red</b></h4>
-                <!--<p>Bounce Rate</p>-->
-                <p>Warning</p>
+                <h4><b>CEDIS</b></h4>
+
+                <p>Informational</p>
+                <!--<p>User Registrations</p>-->
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'CEDIS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
             </div>
           </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h4><b>Back Office</b></h4>
+
+                <p>Informational</p>
+                <!--<p>User Registrations</p>-->
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'BACK_OFFICE' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h4><b>Otros</b></h4>
+
+                <p>Informational</p>
+                <!--<p>User Registrations</p>-->
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'OTROS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <!--<div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--{{ links.7.status }} {{links.7.ip}}-->
+            <!--
+            {% if links.7.status != "active" %}
+              <div class="small-box bg-danger">
+            {% else %}
+              <div class="small-box bg-success">
+            {% endif %}-->
+            <!--{% for link in links %}
+              {{link.ip}}<br>
+            {% endfor %} -->
+            <!--<div class="small-box bg-danger">-->
+              <!--<div class="inner">
+                <h4><b>Tiendas</b></h4>
+                {% if links.7.status != "active" %}
+                  <p>Important</p>
+                {% else %}
+                  <p>Informational</p>
+                {% endif %}-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>  -->
+
+              <!--<div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-danger">-->
+                  <!--<div class="small-box bg-success">
+                  <div class="inner">
+                    <h4><b>Internet</b></h4>
+    
+                    <p>Informational</p>-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>-->
+                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-warning">
+                  <div class="inner">
+                    <h4><b>Aplicaciones</b></h4>
+    
+                    <p>Warning</p>-->
+                    <!--<p>User Registrations</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>-->
+                  <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+                </div>
+              </div>
+
+          <div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-danger">
+              <div class="inner">
+                <h4><b>Seguridad</b></h4>-->
+
+                <!--<p>New Orders</p>-->
+                <!--<p>Important</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>-->
+              <!--<a href="{% static 'assets/pages/UI/seguridad.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="{% url 'SEGURIDAD' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>-->
+          <!-- ./col -->
+          <!--<div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-success">-->
+              <!--<div class="small-box bg-warning">
+              <div class="inner">-->
+                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
+                <!--<h4><b>Red</b></h4>-->
+                <!--<p>Bounce Rate</p>-->
+                <!--<p>Warning</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+            <!--</div>-->
+          <!--</div>-->
           <!-- ./col -->
           
           <!-- ./col -->
@@ -1059,12 +1133,13 @@
             <!--FIN DE EXPERIMENTO-->
 
             <!--INICIO DE TABLECHIDA-->
+            <!--
             <div class="card">
                 <div class="card-header">
                   <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
-                </div>
+                </div>-->
                 <!-- /.card-header -->
-                <div class="card-body">
+                <!--<div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -1075,7 +1150,7 @@
                       <th>IP address</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody>-->
                       <!--
                         <td>OXXO 4.0 Sureste</td>
                         <td>10OAX50RD6                    </td>
@@ -1086,18 +1161,18 @@
                     -->
 
                       <!--{% with counter=0 %}-->
-                      {% for link in links %}
+                      <!--{% for link in links %}-->
                         <!--{% if link.status != "active" %}
                           {{ counter|add:"1" }}
                         {% endif %}-->
-                        <tr>
+                        <!--<tr>
                           <td>CPOC 2023</td>
                           <td>{{link.network}}</td>
                           <td>{{link.lastReportedAt}}</td>
                           <td>{{link.interface}}: {{link.status}}</td>
                           <td>{{link.ip}}</td>
                         </tr>
-                      {% endfor %}
+                      {% endfor %}-->
                       <!--{% endwith %}-->
 
                     <!--
@@ -1117,11 +1192,11 @@
                       <th>Engine version</th>
                       <th>CSS grade</th>
                     </tr>-->
-                    </tfoot>
+                    <!--</tfoot>
                   </table>
-                </div>
+                </div>-->
                 <!-- /.card-body -->
-              </div>
+              <!--</div>-->
             <!-- FIN DE TABLA CHIDA-->
 
             <!--INICIO DE TABLECHIDA2-->

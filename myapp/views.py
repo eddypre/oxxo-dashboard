@@ -27,6 +27,54 @@ def BASE(request):
 def SEGURIDAD(request):
     return render(request, 'seguridad.html')
 
+def SERVICIOS_ELECTRONICOS(request):
+    return render(request, 'servicios_electronicos.html')
+
+def CEDIS(request):
+    return render(request, 'cedis.html')
+
+def BACK_OFFICE(request):
+    return render(request, 'back_office.html')
+
+def OTROS(request):
+    return render(request, 'otros.html')
+
+def SERVICIOS_FINANCIEROS(request):
+    return render(request, 'servicios_financieros.html')
+
+def TAE(request):
+    return render(request, 'tae.html')
+
+def SERVICIOS_NO_FINANCIEROS(request):
+    return render(request, 'servicios_no_financieros.html')
+
+def CORRESPONSALIAS(request):
+    return render(request, 'corresponsalias.html')
+
+def ENVIOS(request):
+    return render(request, 'envios.html')
+
+def REMESAS(request):
+    return render(request, 'remesas.html')
+
+def PAGO_TDC(request):
+    return render(request, 'pago_tdc.html')
+
+def AUTENTICACION_DE_CAJEROS(request):
+    return render(request, 'autenticacion_de_cajeros.html')
+
+def SPIN(request):
+    return render(request, 'spin.html')
+
+def OXXO_PREMIA(request):
+    return render(request, 'oxxo_premia.html')
+
+def RETIROS(request):
+    return render(request, 'retiros.html')
+
+def RETIROS_SIN_TARJETA(request):
+    return render(request, 'retiros_sin_tarjeta.html')
+
 def INTERNET(request):
     return render(request, 'internet.html')
 
