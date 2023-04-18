@@ -457,11 +457,24 @@
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <!--<div class="small-box bg-danger">-->
+
+              {% if id == 0 %}
+                <div class="small-box bg-danger">
+              {% else %}
+                <div class="small-box bg-success">
+              {% endif %}
+
               <div class="inner">
                 <h4><b>Servicios financieros</b></h4>
 
+                {% if id == 0 %}
                 <p>Important</p>
+                {% else %}
+                <p>Informational</p>
+                {% endif %}
+                
+                <!--<p>Important</p>-->
                 <!--<p>User Registrations</p>-->
               </div>
               <div class="icon">

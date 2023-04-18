@@ -22,7 +22,7 @@ from django.template import Template, Context
 #Current password: 6z$mL%8JrpEV
 
 def BASE(request):
-    return render(request, 'base.html', {"links":getLinks()})
+    return render(request, 'base.html', {"id":getAppd()})
 
 def TIENDAS(request):
     return render(request, 'tiendas.html', {"links":getLinks()})
@@ -31,7 +31,7 @@ def SEGURIDAD(request):
     return render(request, 'seguridad.html')
 
 def SERVICIOS_ELECTRONICOS(request):
-    return render(request, 'servicios_electronicos.html')
+    return render(request, 'servicios_electronicos.html', {"id":getAppd()})
 
 def CEDIS(request):
     return render(request, 'cedis.html')
@@ -43,7 +43,7 @@ def OTROS(request):
     return render(request, 'otros.html')
 
 def SERVICIOS_FINANCIEROS(request):
-    return render(request, 'servicios_financieros.html')
+    return render(request, 'servicios_financieros.html', {"id":getAppd()})
 
 def TAE(request):
     return render(request, 'tae.html')
@@ -52,7 +52,7 @@ def SERVICIOS_NO_FINANCIEROS(request):
     return render(request, 'servicios_no_financieros.html')
 
 def CORRESPONSALIAS(request):
-    return render(request, 'corresponsalias.html')
+    return render(request, 'corresponsalias.html', {"id":getAppd()})
 
 def ENVIOS(request):
     return render(request, 'envios.html')
@@ -97,6 +97,21 @@ class link:
         self.interface = interface
         self.status = status
         self.ip = ip
+
+def getAppd():
+    id = 0
+    credentials = {
+    "Account": "asteroids202304160747452",
+    "Username": "asteroids202304160747452@asteroids202304160747452",
+    "Password": "sf6u3pmvx8j7"
+    }
+
+    applicationsUrl = "https://" + credentials["Account"] + ".saas.appdynamics.com/controller/rest/applications?output=JSON"
+    response = requests.get(applicationsUrl, auth=(credentials["Username"], credentials["Password"]))
+
+    if(response.text != "[]"):
+        id = 1
+    return id
 
 #meraki
 def getLinks():

@@ -456,11 +456,23 @@
 
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+
+                {% if id == 0 %}
+                  <div class="small-box bg-danger">
+                {% else %}
+                  <div class="small-box bg-success">
+                {% endif %}
+
+                <!--<div class="small-box bg-danger">-->
                   <div class="inner">
                     <h4><b>Corresponsalías</b></h4>
     
-                    <p>Afectación: $1.3M MXP<br>Impacto: 60 min</p>
+                    {% if id == 0 %}
+                      <p>Afectación: $1.3M MXP<br>Impacto: 60 min</p>
+                    {% else %}
+                      <p>Afectación: -<br>Impacto: -</p>
+                    {% endif %}
+                    <!--<p>Afectación: $1.3M MXP<br>Impacto: 60 min</p>-->
                     <!--<p>Unique Visitors</p>-->
                   </div>
                   <div class="icon">

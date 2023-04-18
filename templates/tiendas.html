@@ -908,23 +908,53 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
 
-
-          <div class="col-lg-3 col-6">
+          <!--
+          <div class="col-lg-3 col-6">-->
             <!-- small box -->
+            <!--
             <div class="small-box bg-danger">
               <div class="inner">
                 <h4><b>Tiendas</b></h4>
 
-                <p>Important</p>
+                <p>Important</p>-->
                 <!--<p>User Registrations</p>-->
-              </div>
+              <!--</div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
-              </div>
+              </div>-->
               <!--<a href="{% static 'assets/pages/UI/aplicaciones.html' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
+              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  
             </div>
-          </div>
+          </div>-->
+
+          <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <!--{{ links.0.status }} {{links.0.ip}}-->
+            
+            {% if links.0.status == "active" %}
+              <div class="small-box bg-success">
+            {% else %}
+              <div class="small-box bg-danger">
+            {% endif %}
+            <!--{% for link in links %}
+              {{link.ip}}<br>
+            {% endfor %} -->
+            <!--<div class="small-box bg-danger">-->
+              <div class="inner">
+                <h4><b>Tiendas</b></h4>
+                {% if links.0.status == "active" %}
+                  <p>Informational</p>
+                {% else %}
+                  <p>Important</p>
+                {% endif %}
+                  </div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                
+              </div>
+              </div>
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -998,7 +1028,8 @@
             </div>
           </div>
 
-          <!--<div class="col-lg-3 col-6">-->
+          <!--
+          <div class="col-lg-3 col-6">-->
             <!-- small box -->
             <!--{{ links.7.status }} {{links.7.ip}}-->
             <!--
@@ -1019,14 +1050,14 @@
                   <p>Informational</p>
                 {% endif %}-->
                     <!--<p>Unique Visitors</p>-->
-                  <!--</div>
-                  <div class="icon">
+                  <!--</div>-->
+                  <!--<div class="icon">
                     <i class="ion ion-pie-graph"></i>
                   </div>
                   <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
-              </div>  -->
-
+              </div> 
+            -->
               <!--<div class="col-lg-3 col-6">-->
                 <!-- small box -->
                 <!--<div class="small-box bg-danger">-->
@@ -1151,13 +1182,13 @@
             <!--FIN DE EXPERIMENTO-->
 
             <!--INICIO DE TABLECHIDA-->
-            <!--
+            
             <div class="card">
                 <div class="card-header">
                   <a href="https://n98.meraki.com/o/O5_wMcIb/manage/organization/overview#t=network"><h3 class="card-title">Información de Tiendas (click para más detalles)</h3></a>
-                </div>-->
+                </div>
                 <!-- /.card-header -->
-                <!--<div class="card-body">
+                <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
@@ -1168,7 +1199,7 @@
                       <th>IP address</th>
                     </tr>
                     </thead>
-                    <tbody>-->
+                    <tbody>
                       <!--
                         <td>OXXO 4.0 Sureste</td>
                         <td>10OAX50RD6                    </td>
@@ -1179,18 +1210,18 @@
                     -->
 
                       <!--{% with counter=0 %}-->
-                      <!--{% for link in links %}-->
+                      {% for link in links %}
                         <!--{% if link.status != "active" %}
                           {{ counter|add:"1" }}
                         {% endif %}-->
-                        <!--<tr>
+                        <tr>
                           <td>CPOC 2023</td>
                           <td>{{link.network}}</td>
                           <td>{{link.lastReportedAt}}</td>
                           <td>{{link.interface}}: {{link.status}}</td>
                           <td>{{link.ip}}</td>
                         </tr>
-                      {% endfor %}-->
+                      {% endfor %}
                       <!--{% endwith %}-->
 
                     <!--
@@ -1210,11 +1241,11 @@
                       <th>Engine version</th>
                       <th>CSS grade</th>
                     </tr>-->
-                    <!--</tfoot>
-                  </table>
-                </div>-->
+                    </tfoot>
+                    </table>
+                </div>
                 <!-- /.card-body -->
-              <!--</div>-->
+              </div>
             <!-- FIN DE TABLA CHIDA-->
 
             <!--INICIO DE TABLECHIDA2-->

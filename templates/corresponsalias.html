@@ -577,12 +577,26 @@
               <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <!--<div class="small-box bg-danger">-->
-                  <div class="small-box bg-danger">
+                  <!--<div class="small-box bg-danger">-->
+
+                    {% if id == 0 %}
+                      <div class="small-box bg-danger">
+                    {% else %}
+                      <div class="small-box bg-success">
+                    {% endif %}
+
                   <div class="inner">
                     <h4><b>BD</b></h4>
     
                     <!--<p>Informational</p>-->
+
+                    {% if id == 0 %}
                     <p>Ticket: 123456<br>Status: En proceso</p>
+                    {% else %}
+                    <p>Ticket: -<br>Status: -</p>
+                    {% endif %}
+
+                    <!--<p>Ticket: 123456<br>Status: En proceso</p>-->
                     <!--<p>Unique Visitors</p>-->
                   </div>
                   <div class="icon">
@@ -591,7 +605,7 @@
                   </div>
                   <!--<a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
                   <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-                  <a href="https://demo1.saas.appdynamics.com/controller/#/location=DB_MONITORING_SERVER_LIST" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  <a href="https://asteroids202304160747452.saas.appdynamics.com/controller/#/location=APPS_ALL_DASHBOARD&timeRange=last_1_hour.BEFORE_NOW.-1.-1.60&dashboardMode=force" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                   
                 </div>
               </div>
