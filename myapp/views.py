@@ -122,8 +122,11 @@ def getLinks():
     #MERAKI_API_KEY="73c7b2be0214ee988232e52ea8411934daffbc79"
     #organization_id = '618119048856602329'
 
-    MERAKI_API_KEY="1ba6895780ac12d8c108e641367fcf4c7a9ffc17"
-    organization_id = '618119048856602329'      
+    #MERAKI_API_KEY='1ba6895780ac12d8c108e641367fcf4c7a9ffc17'
+    #MERAKI_API_KEY='73c7b2be0214ee988232e52ea8411934daffbc79'
+    #organization_id = '618119048856602329'      
+    organization_id = '618119048856601703'
+    MERAKI_API_KEY = '6d48e1ba8174111ead5caeca9c2a531959c4bac4'
 
     dashboard = meraki.DashboardAPI(MERAKI_API_KEY, output_log=False, print_console=False)
     response = dashboard.organizations.getOrganizationUplinksStatuses(organization_id, total_pages='all')
