@@ -21,6 +21,8 @@ from django.template import Template, Context
 #username: admin
 #Current password: 6z$mL%8JrpEV
 
+#git clone --branch [branch_name] --single-branch [remote-url]
+
 def BASE(request):
     return render(request, 'base.html', {"id":getAppd()})
 
