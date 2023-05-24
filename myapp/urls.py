@@ -29,6 +29,7 @@ urlpatterns = [
     path('RETIROS', views.RETIROS, name='RETIROS'),
     path('RETIROS_SIN_TARJETA', views.RETIROS_SIN_TARJETA, name='RETIROS_SIN_TARJETA'),
     path('TIENDAS', views.TIENDAS, name='TIENDAS'),
+    path('BOTONPANICO', views.BOTONPANICO, name='BOTONPANICO'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

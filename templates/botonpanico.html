@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="refresh" content="60">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+
+  <!--table-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css' %}">
+  <!--table-->
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/jqvmap/jqvmap.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'assets/dist/css/adminlte.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- summernote -->
+  <link rel="stylesheet" href="{% static 'assets/plugins/summernote/summernote-bs4.min.css' %}">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <!--<img class="animation__shake" src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTELogo" height="60" width="60">-->
+    <img class="animation__shake" src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="." class="nav-link">Home</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search -->
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+            <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </li>
+
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admin
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 1</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admim
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 2</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'assets/dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Admin
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Test Chat 3</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 8 new reports
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <!--
+    <a href="." class="brand-link">
+      <img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" alt="Oxxo" class="brand-image img-circle elevation-2">
+      <span class="brand-text font-weight-light">&nbsp;OXXO</span>
+    </a>-->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <!--<img src="{% static 'assets/dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">-->
+          <!--<img src="{% static 'assets/dist/img/rsz_oxxo.png' %}" class="img-circle elevation-2" alt="User Image">-->
+          <img src="{% static 'assets/dist/img/new-oxxo-logo.webp' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Status Dashboard</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          
+          <li class="nav-item">
+            <!--<a href="{% static 'assets/pages/widgets.html' %}" class="nav-link">-->
+              <a href="{% url 'APLICACIONES' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                <!--Widgets-->
+                Aplicaciones
+                <!--<span class="right badge badge-danger">44</span>-->
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'SEGURIDAD' %}" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                Vulnerabilidades
+                <!--<i class="right fas fa-angle-left"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/chartjs.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ChartJS</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/flot.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Flot</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/inline.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/charts/uplot.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>uPlot</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'INTERNET' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                WAN
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/general.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/icons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Icons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/UI/buttons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buttons</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/sliders.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sliders</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/modals.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Modals & Alerts</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/navbar.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Navbar & Tabs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/timeline.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Timeline</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/UI/ribbons.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Ribbons</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'RED' %}" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Red
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/general.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>General Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/advanced.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Advanced Elements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'pages/forms/editors.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Editors</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/forms/validation.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Validation</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          <li class="nav-item">
+            <!--<a href="#" class="nav-link">-->
+              <a href="{% url 'TIENDAS' %}" class="nav-link">
+              <i class="nav-icon fas fa-table"></i>
+              <p>
+                Tiendas
+                <!--<i class="fas fa-angle-left right"></i>-->
+              </p>
+            </a>
+            <!--<ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/simple.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Simple Tables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/data.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>DataTables</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% static 'assets/pages/tables/jsgrid.html' %}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>jsGrid</p>
+                </a>
+              </li>
+            </ul>-->
+          </li>
+          
+          <li class="nav-header">LABELS</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-danger"></i>
+              <p class="text">Important</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-warning"></i>
+              <p>Warning</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-circle text-success"></i>
+              <p>Informational</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Botón de pánico</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Dashboard v1</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            
+            <!-- INICIO DE LO QUE PODEMOS AGREGAR, BIG BUTTONS ...
+            <div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-danger">
+                  <div class="inner">
+                    <h4><b>Tiendas</b></h4>
+    
+                    <p>Important</p>-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>-->
+                  <!--<a href="/templates/tiendas.html" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'TIENDAS' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>  
+
+              <div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-danger">-->
+                  <!--<div class="small-box bg-success">
+                  <div class="inner">
+                    <h4><b>Internet</b></h4>
+    
+                    <p>Informational</p>-->
+                    <!--<p>Unique Visitors</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-pie-graph"></i>
+                  </div>
+                  <a href="{% url 'INTERNET' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-6">-->
+                <!-- small box -->
+                <!--<div class="small-box bg-warning">
+                  <div class="inner">
+                    <h4><b>Aplicaciones</b></h4>
+    
+                    <p>Warning</p>-->
+                    <!--<p>User Registrations</p>-->
+                  <!--</div>
+                  <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                  </div>-->
+                  <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+                  <!--<a href="{% url 'APLICACIONES' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+
+          <div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-danger">
+              <div class="inner">
+                <h4><b>Seguridad</b></h4>-->
+
+                <!--<p>New Orders</p>-->
+                <!--<p>Important</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>-->
+          <!-- ./col -->
+          <!--<div class="col-lg-3 col-6">-->
+            <!-- small box -->
+            <!--<div class="small-box bg-success">-->
+              <!--<div class="small-box bg-warning">
+              <div class="inner">-->
+                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
+                <!--<h4><b>Red</b></h4>-->
+                <!--<p>Bounce Rate</p>-->
+                <!--<p>Warning</p>
+              </div>
+              <div class="icon">
+                <i class="ion ion-stats-bars"></i>
+              </div>
+              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
+            <!--</div>-->
+          </div>
+          <!-- ./col -->
+          
+          <!-- ./col -->
+
+          <!-- ./col -->
+          <!-- ./col -->
+          
+          <!-- ./col -->
+        </div>
+        
+            <!--INICIO DE TABLECHIDA-->
+            <div class="card">
+              <!--<iframe src="https://demo1.saas.appdynamics.com/controller/dashboards.jsp?desktopView=true#/location=DASHBOARD_VIEWER&token=b902f596-02df-4184-98a0-11693e833072&timeRange=last_8_days.BEFORE_NOW.-1.-1.11520" style="border:none;" title="Tetration" height="600" width="100%"></iframe>-->
+              
+                <div class="card-header">
+                  <a href="#"><h3 class="card-title">Información de la red</h3></a>
+                </div>
+                <!-- /.card-header -->
+
+                <embed src="{% static 'assets/dist/img/top.gif' %}" />
+                
+                <!--<img src="{% static 'assets/dist/img/topology.png' %}"  alt="User Image">-->
+
+                <div style="background: ghostwhite; font-size: 12px; font-family: Courier New; padding: 10px; border: 1px solid lightgray; margin: 10px;">
+                    <b>Acceso Legacy.</b>
+                    <br><br>
+                    NP-SW1#show process cpu | include utilization<br>
+                    CPU utilization for five seconds: 38%/0%; one minute: 39%; five minutes: 39%<br><br>
+                    NP-SW1#show process memory sorted | include Processor<br>
+                    Processor Pool Total:  413389604 Used:   52285832 Free:  361103772<br><br>
+                    NP-SW1#show int status               
+                    <br>
+                    Port      Name               Status       Vlan       Duplex  Speed Type<br> 
+                    Gi1/0/1                      connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/2                      connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/3                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/4                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/5   * Lap pruebas vent notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/6                      notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/7                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/8   ***Gateway de Voz  notconnect   71           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/9                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/10                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/11                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/12  **B12 Sala Nexus** notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/13                     notconnect   181          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/14                     notconnect   181          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/15                     notconnect   181          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/16                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/17                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/18                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/19                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/20  ***ISR SDWAN GE0_0 notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/21                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/22                     connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/23                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/24                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/25                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/26                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/27                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/28  Sergio_Gza_DC      connected    72         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/29                     notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/30                     connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/31                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/32                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/33                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/34                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/35                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/36                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/37  **DVR**            connected    72         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/38                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/39  **APS**            connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/40                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/41  **CONEXION-MERAKI* connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/42  **CONEXION-SW2**   connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/43  **CONEXION-SW3**   connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/44  **CONEXION-SW4**   connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/45  **CONEXION-SW5     connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/46  **ANTENAS**        notconnect   78           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/47  ** CONEXION A ROUT connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/48  **APS**            connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/49  **CONEXION-SW6**   notconnect   1            auto   auto 1000BaseSX SFP<br>
+                    Gi1/0/50                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/51                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/52                     notconnect   1            auto   auto Not Present<br>
+                    Fa0                          disabled     routed       auto   auto 10/100BaseTX<br>
+                    NP-SW1# <br><br>
+                    NP-SW1#show vlan brief<br>
+                    VLAN Name                             Status    Ports<br>
+                    ---- -------------------------------- --------- -------------------------------<br>
+                    1    default                          active    Gi1/0/20, Gi1/0/29, Gi1/0/49, Gi1/0/50, Gi1/0/51, Gi1/0/52<br>
+                    10   Demo                             active    <br>
+                    11   Demo_Datos                       active    <br>
+                    55   **DEMO VIPTELA**                 active    <br>
+                    70   GESTION                          active    <br>
+                    71   VOZ                              active    Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/8, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/23, Gi1/0/24, Gi1/0/25, Gi1/0/26, Gi1/0/27<br>
+                                                                    Gi1/0/28, Gi1/0/30, Gi1/0/31, Gi1/0/32, Gi1/0/33, Gi1/0/34, Gi1/0/36, Gi1/0/38, Gi1/0/40<br>
+                    72   DISPOSITIVOS                     active    Gi1/0/28, Gi1/0/37<br>
+                    73   DATOS                            active    Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/7, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/21, Gi1/0/23, Gi1/0/24, Gi1/0/25, Gi1/0/26, Gi1/0/27<br>
+                                                                    Gi1/0/30, Gi1/0/31, Gi1/0/32, Gi1/0/33, Gi1/0/34, Gi1/0/36, Gi1/0/38, Gi1/0/40<br>
+                    75   **SEGURIDAD PRUEBAS**            active    Gi1/0/6, Gi1/0/35<br>
+                    76   WLAN GUEST                       active    <br>
+                    77   NATIVA                           active    <br>
+                    78   ANTENAS_L2L                      active    Gi1/0/46<br>
+                    80   ring                             active    <br>
+                    82   **Pruebas Fer**                  active    <br>
+                    86   LAB_ASA_WAN                      active    <br>
+                    87   VLAN0087                         active    <br>
+                    88   VLAN0088                         active    <br>
+                    89   VLAN0089                         active    <br>
+                    91   LAB_FTD                          active    <br>
+                    92   Pantallas                        active    <br>
+                    94   PruebasServerColab               active    <br>
+                    111  LAB MERAKI                       active    <br>
+                    181  mgmt_ftd_oxxo                    active    Gi1/0/13, Gi1/0/14, Gi1/0/15<br>
+                    200  PruebaColab                      active    <br>
+                    205  LAB-CHECO                        active    <br>
+                    212  WAN2_MERAKI-ROUTER               active    <br>
+                    213  CITRO-ISE                        active    <br>
+                    222  LAB-F5                           active    <br>
+                    1002 fddi-default                     act/unsup <br>
+                    1003 token-ring-default               act/unsup <br>
+                    1004 fddinet-default                  act/unsup <br>
+                    1005 trnet-default                    act/unsup <br><br>
+
+                    NP-SW1#show ip route<br>
+                    Default gateway is 192.168.70.1<br>
+                    <br>
+                    Host               Gateway           Last Use    Total Uses  Interface<br>
+                    ICMP redirect cache is empty<br><br>
+                </div>
+                
+                <div style="background: ghostwhite; font-size: 12px; font-family: Courier New; padding: 10px; border: 1px solid lightgray; margin: 10px;">
+                    <b>Bloque de tiendas.</b>
+                    <br><br>
+                    NP-SW2#show process cpu | include utilization<br>
+                    CPU utilization for five seconds: 38%/0%; one minute: 38%; five minutes: 38%<br><br>
+                    NP-SW2#show process memory sorted | include Processor<br>
+                    Processor Pool Total:  413389604 Used:   53050984 Free:  360338620<br><br>
+
+                    NP-SW2#show int status
+                    <br>
+                    Port      Name               Status       Vlan       Duplex  Speed Type<br> 
+                    Gi1/0/1   *Lugar JMedina*    notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/2   *Lugar Ale Benavid notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/3                      connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/4                      disabled     73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/5   **B35-Sala cloud** notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/6   *Movilidad*        connected    75         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/7   **AP**             connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/8                      notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/9   ** IP Phone Fernan connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/10                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/11                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/12                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/13                     notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/14                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/15  Lugar JL           notconnect   72           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/16                     connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/17                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/18                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/19                     connected    73           full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/20                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/21                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/22                     connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/23  **Camara Meraki MV connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/24  *Telefono ALE BENA notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/25                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/26                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/27                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/28  *PUERTO DE SALA UM notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/29  *TELEFONO LUGAR ME connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/30  *PUERTO 2 DE SALA  notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/31  **Jorge Hernandez* notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/32  **Umbrella-Roomkid connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/33  ***ISR SDWAN_GE0** disabled     70           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/34  **Pruebas ISELAB S notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/35                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/36                     notconnect   71           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/37  *Movilidad*        notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/38                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/39                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/40                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/41  *Movilidad*        notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/42                     notconnect   73           full   1000 10/100/1000BaseTX<br>
+                    Gi1/0/43                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/44                     connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/45                     notconnect   75           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/46  **AP**             connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/47  **CONEXION-SW1**   connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/48  **Videotel-Recepci connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/49                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/50                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/51                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/52                     notconnect   1            auto   auto Not Present<br>
+                    Fa0                          disabled     routed       auto   auto 10/100BaseTX<br><br>
+
+                    NP-SW2#sh vlan brief
+                    <br>
+                    VLAN Name                             Status    Ports<br>
+                    ---- -------------------------------- --------- -------------------------------<br>
+                    1    default                          active    Gi1/0/13, Gi1/0/49, Gi1/0/50, Gi1/0/51, Gi1/0/52<br>
+                    55   **DEMO VIPTELA**                 active    <br>
+                    70   GESTION                          active    Gi1/0/33<br>
+                    71   VOZ                              active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/11, Gi1/0/12, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/23, Gi1/0/24<br>
+                                                                    Gi1/0/25, Gi1/0/26, Gi1/0/27, Gi1/0/28, Gi1/0/29, Gi1/0/31, Gi1/0/32, Gi1/0/33, Gi1/0/34, Gi1/0/36, Gi1/0/38, Gi1/0/39, Gi1/0/44, Gi1/0/48<br>
+                    72   DISPOSITIVOS                     active    Gi1/0/15<br>
+                    73   DATOS TEMPORAL                   active    Gi1/0/1, Gi1/0/3, Gi1/0/4, Gi1/0/5, Gi1/0/9, Gi1/0/11, Gi1/0/12, Gi1/0/14, Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/19, Gi1/0/20, Gi1/0/21, Gi1/0/22, Gi1/0/23, Gi1/0/24, Gi1/0/25<br>
+                                                                    Gi1/0/26, Gi1/0/27, Gi1/0/28, Gi1/0/29, Gi1/0/30, Gi1/0/31, Gi1/0/32, Gi1/0/38, Gi1/0/39, Gi1/0/42, Gi1/0/44, Gi1/0/48<br>
+                    75   VLAN0075                         active    Gi1/0/2, Gi1/0/6, Gi1/0/8, Gi1/0/10, Gi1/0/34, Gi1/0/35, Gi1/0/37, Gi1/0/40, Gi1/0/41, Gi1/0/43, Gi1/0/45<br>
+                    76   WLAN GUEST                       active    <br>
+                    77   NATIVA                           active    <br>
+                    78   ANTENAS_L2L                      active    <br>
+                    80   ring                             active    <br>
+                    82   **Pruebas Fer**                  active    <br>
+                    86   LAB_ASA_WAN                      active    <br>
+                    87   ASA1-INSIDE                      active    <br>
+                    88   VLAN0088                         active    <br>
+                    89   VLAN0089                         active    <br>
+                    91   VLAN0091                         active    <br>
+                    92   Pantallas                        active    <br>
+                    111  LAB-MERAKI                       active    <br>
+                    200  PruebaColab                      active    <br>
+                    205  LAB-CHECO                        active    <br>
+                    212  WAN2_MERAKI-ROUTER               active    <br>
+                    213  VLAN0213                         active    <br>
+                    222  LAB-F5                           active    <br>
+                    1002 fddi-default                     act/unsup <br>
+                    1003 token-ring-default               act/unsup <br>
+                    1004 fddinet-default                  act/unsup <br>
+                    1005 trnet-default                    act/unsup <br><br>
+                    
+                    NP-SW2#show ip route<br>
+                    Default gateway is 192.168.70.1<br>
+                    <br>
+                    Host               Gateway           Last Use    Total Uses  Interface<br>
+                    ICMP redirect cache is empty<br><br>
+                </div>
+            
+                <div style="background: ghostwhite; font-size: 12px; font-family: Courier New; padding: 10px; border: 1px solid lightgray; margin: 10px;">
+                    <b>Bloque WAN.</b>
+                    <br><br>
+                    NP-SW3#show process cpu | include utilization<br>
+                    CPU utilization for five seconds: 29%/0%; one minute: 30%; five minutes: 30%<br><br> 
+                    
+                    NP-SW3#show process memory sorted | include Processor<br>
+                    Processor Pool Total:  442796836 Used:   44648948 Free:  398147888<br><br>
+
+                    NP-SW3#sh int status<br>
+                    Port      Name               Status       Vlan       Duplex  Speed Type<br>
+                    Gi1/0/1   ** Camara MV Merak connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/2   ** Impresora**     connected    72         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/3   ** Server Prime DC notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/4   ** Nodo Julio **   notconnect   201          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/5                      connected    73         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/6   ** Nodo Fer **     notconnect   202          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/7                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/8   **AP**             connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/9                      notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/10  DNAC-Oper          notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/11  ** Server Prime DC notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/12                     connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/13                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/14                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/15                     notconnect   73           auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/16                     notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/17                     notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/18                     notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/19                     notconnect   213          auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/20                     connected    55         a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/21  **AP**             connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/22  WLC                notconnect   1            auto   auto 10/100/1000BaseTX<br>
+                    Gi1/0/23  **CONEXION SW1**   connected    trunk      a-full a-1000 10/100/1000BaseTX<br>
+                    Gi1/0/24                     connected    73         a-full  a-100 10/100/1000BaseTX<br>
+                    Gi1/0/25                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/26                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/27                     notconnect   1            auto   auto Not Present<br>
+                    Gi1/0/28                     notconnect   1            auto   auto Not Present<br>
+                    Fa0                          disabled     routed       auto   auto 10/100BaseTX<br><br>
+
+                    NP-SW3#sh vlan brief<br>
+
+                    VLAN Name                             Status    Ports<br>
+                    ---- -------------------------------- --------- -------------------------------<br>
+                    1    default                          active    Gi1/0/16, Gi1/0/17, Gi1/0/18, Gi1/0/22, Gi1/0/25, Gi1/0/26, Gi1/0/27, Gi1/0/28<br>
+                    55   VLAN0055                         active    Gi1/0/20<br>
+                    70   GESTION                          active    <br>
+                    71   VOZ                              active    Gi1/0/1, Gi1/0/2, Gi1/0/3, Gi1/0/5, Gi1/0/6, Gi1/0/7, Gi1/0/9, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/16, Gi1/0/20, Gi1/0/24<br>
+                    72   DISPOSITIVO                      active    Gi1/0/2<br>
+                    73   DATOS_TEMPORAL                   active    Gi1/0/1, Gi1/0/3, Gi1/0/5, Gi1/0/7, Gi1/0/9, Gi1/0/10, Gi1/0/11, Gi1/0/12, Gi1/0/13, Gi1/0/14, Gi1/0/15, Gi1/0/24<br>
+                    75   **PRUEBAS_SEGURIDAD**            active    <br>
+                    76   WLAN-GUEST                       active    <br>
+                    77   NATIVA                           active    <br>
+                    78   ANTENAS_L2L                      active    <br>
+                    80   ring                             active    <br>
+                    82   **PruebasVitptelaFer**           active    <br>
+                    86   LAB_ASA_WAN                      active    <br>
+                    87   LAB_ASA_LAN                      active    <br>
+                    89   VLAN0089                         active    <br>
+                    92   Pantallas                        active    <br>
+                    111  LAB-MERAKI                       active    <br>
+                    201  Prueba_ME_Segovia                active    Gi1/0/4<br>
+                    202  VLAN0202                         active    Gi1/0/6<br>
+                    205  LAB-CHECO                        active    <br>
+                    212  WAN2_MERAKI-ROUTER               active    <br>
+                    213  VLAN0213                         active    Gi1/0/19<br>
+                    222  LAB-F5                           active    <br>
+                    1002 fddi-default                     act/unsup <br>
+                    1003 token-ring-default               act/unsup <br>
+                    1004 fddinet-default                  act/unsup <br>
+                    1005 trnet-default                    act/unsup <br><br>
+
+                    NP-SW3#show ip route<br>
+                    Default gateway is 192.168.88.1<br><br>
+                    Host               Gateway           Last Use    Total Uses  Interface<br>
+                    ICMP redirect cache is empty<br>
+
+                </div>    
+
+            <!-- /.card -->
+
+
+            <!-- INICIO DE TABLA EXPANDABLE-->
+            
+            <!-- FIN DE TABLA EXPANDABLE-->
+
+            
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2023 <a href="https://oxxo.com">OXXO</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.0.0
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'assets/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'assets/plugins/chart.js/Chart.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'assets/plugins/sparklines/sparkline.js' %}"></script>
+<!-- JQVMap -->
+<script src="{% static 'assets/plugins/jqvmap/jquery.vmap.min.js' %}"></script>
+<script src="{% static 'assets/plugins/jqvmap/maps/jquery.vmap.usa.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'assets/plugins/jquery-knob/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'assets/plugins/moment/moment.min.js' %}"></script>
+<script src="{% static 'assets/plugins/daterangepicker/daterangepicker.js' %}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{% static 'assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<!-- Summernote -->
+<script src="{% static 'assets/plugins/summernote/summernote-bs4.min.js' %}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'assets/dist/js/adminlte.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<!-- <script src="{% static 'assets/dist/js/demo.js' %}"></script> -->
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="{% static 'assets/dist/js/pages/dashboard.js' %}"></script>
+
+<script src="{% static 'assets/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'assets/plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'assets/plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'assets/plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'assets/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+
+
+<script>
+    $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+</body>
+</html>

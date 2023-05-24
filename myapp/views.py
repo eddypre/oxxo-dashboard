@@ -29,6 +29,9 @@ def BASE(request):
 def TIENDAS(request):
     return render(request, 'tiendas.html', {"links":getLinks()})
 
+def BOTONPANICO(request):
+    return render(request, 'botonpanico.html')
+
 def SEGURIDAD(request):
     return render(request, 'seguridad.html')
 
