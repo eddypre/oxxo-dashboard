@@ -18,13 +18,16 @@ from django.template import Template, Context
 #user: ctriana@plannet.mx
 #password: 7D702c4d80$
 #instance: https://dev113692.service-now.com
+
 #username: admin
 #Current password: 6z$mL%8JrpEV
 
 #git clone --branch [branch_name] --single-branch [remote-url]
 
+#def BASE(request):
+#    return render(request, 'base.html', {"id":getAppd()})
 def BASE(request):
-    return render(request, 'base.html', {"id":getAppd()})
+    return render(request, 'base.html')
 
 def TIENDAS(request):
     return render(request, 'tiendas.html', {"links":getLinks()})
@@ -35,8 +38,11 @@ def BOTONPANICO(request):
 def SEGURIDAD(request):
     return render(request, 'seguridad.html')
 
+#def SERVICIOS_ELECTRONICOS(request):
+#    return render(request, 'servicios_electronicos.html', {"id":getAppd()})
+
 def SERVICIOS_ELECTRONICOS(request):
-    return render(request, 'servicios_electronicos.html', {"id":getAppd()})
+    return render(request, 'servicios_electronicos.html')
 
 def CEDIS(request):
     return render(request, 'cedis.html')
@@ -47,8 +53,11 @@ def BACK_OFFICE(request):
 def OTROS(request):
     return render(request, 'otros.html')
 
+#def SERVICIOS_FINANCIEROS(request):
+#    return render(request, 'servicios_financieros.html', {"id":getAppd()})
+
 def SERVICIOS_FINANCIEROS(request):
-    return render(request, 'servicios_financieros.html', {"id":getAppd()})
+    return render(request, 'servicios_financieros.html')
 
 def TAE(request):
     return render(request, 'tae.html')
@@ -56,8 +65,10 @@ def TAE(request):
 def SERVICIOS_NO_FINANCIEROS(request):
     return render(request, 'servicios_no_financieros.html')
 
+#def CORRESPONSALIAS(request):
+#    return render(request, 'corresponsalias.html', {"id":getAppd()})
 def CORRESPONSALIAS(request):
-    return render(request, 'corresponsalias.html', {"id":getAppd()})
+    return render(request, 'corresponsalias.html')
 
 def ENVIOS(request):
     return render(request, 'envios.html')
@@ -175,7 +186,6 @@ def getTetration():
     
 #aci
 def getACI():
-
     base_url = 'https://198.18.153.144/api/'
     # create credentials structure
     name_pwd = {'aaaUser': {'attributes': {'name': 'admin', 'pwd': 'C1sco123!'}}}
