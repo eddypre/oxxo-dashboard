@@ -114,6 +114,7 @@ class link:
         self.status = status
         self.ip = ip
 
+'''
 def getAppd():
     id = 0
     credentials = {
@@ -128,7 +129,8 @@ def getAppd():
     if(response.text != "[]"):
         id = 1
     return id
-
+'''
+    
 #meraki
 def getLinks():
     links = []
