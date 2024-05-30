@@ -435,7 +435,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Cedis</h1>
+            <h1 class="m-0">CEDIS Saltillo</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -456,11 +456,11 @@
 
             <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-danger">
+                <div class="small-box bg-success">
                   <div class="inner">
-                    <h4><b>Tiendas</b></h4>
+                    <h4><b>APs 32/32 Up</b></h4>
     
-                    <p>Important</p>
+                    <p>Informational</p>
                     <!--<p>Unique Visitors</p>-->
                   </div>
                   <div class="icon">
@@ -476,7 +476,7 @@
                 <!--<div class="small-box bg-danger">-->
                   <div class="small-box bg-success">
                   <div class="inner">
-                    <h4><b>Internet</b></h4>
+                    <h4><b>WLC 2/2 Up</b></h4>
     
                     <p>Informational</p>
                     <!--<p>Unique Visitors</p>-->
@@ -490,11 +490,11 @@
 
               <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-warning">
+                <div class="small-box bg-success">
                   <div class="inner">
-                    <h4><b>Aplicaciones</b></h4>
+                    <h4><b>Switches 15/15 Up</b></h4>
     
-                    <p>Warning</p>
+                    <p>Informational</p>
                     <!--<p>User Registrations</p>-->
                   </div>
                   <div class="icon">
@@ -507,9 +507,9 @@
 
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-danger">
+            <div class="small-box bg-success">
               <div class="inner">
-                <h4><b>Seguridad</b></h4>
+                <h4><b>WAN</b></h4>
 
                 <!--<p>New Orders</p>-->
                 <p>Important</p>
@@ -521,23 +521,7 @@
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <!--<div class="small-box bg-success">-->
-              <div class="small-box bg-warning">
-              <div class="inner">
-                <!--<h3>Red<sup style="font-size: 20px">%</sup></h3>-->
-                <h4><b>Red</b></h4>
-                <!--<p>Bounce Rate</p>-->
-                <p>Warning</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="{% url 'RED' %}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-              <!--<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>-->
-            </div>
-          </div>
+          
           <!-- ./col -->
           
           <!-- ./col -->
@@ -549,11 +533,19 @@
         </div>
         
             <!--INICIO DE TABLECHIDA-->
+
+            <center><img src="{% static 'assets/dist/img/OXXO-CEDIS-SALTILLO.png' %}" alt="Oxxo" width="50%" height="30%"></center>
+            <br><br>
+            <center><img src="{% static 'assets/dist/img/OXXO-CEDIS-DIAGRAMA.png' %}" alt="Oxxo" width="70%" height="30%"></center>
+            <br><br>
             <div class="card">
               <!--<iframe src="https://demo1.saas.appdynamics.com/controller/dashboards.jsp?desktopView=true#/location=DASHBOARD_VIEWER&token=b902f596-02df-4184-98a0-11693e833072&timeRange=last_8_days.BEFORE_NOW.-1.-1.11520" style="border:none;" title="Tetration" height="600" width="100%"></iframe>-->
               
+                <!--<img src="https://demo1.saas.appdynamics.com/controller/dashboards.jsp?desktopView=true#/location=DASHBOARD_VIEWER&token=b902f596-02df-4184-98a0-11693e833072&timeRange=last_8_days.BEFORE_NOW.-1.-1.11520" style="border:none;" title="Tetration" height="600" width="100%"></iframe>-->
+                
+                
                 <div class="card-header">
-                  <a href="https://tet-pov-rtp1.cpoc.co/#/search-flows?t0=1676629800&t1=1676651400&load0=1676629800&load1=1676651400&load_metric=count&topn_cat=HOST_NAME&chips=W10-&size=20&sampled=false&explore=false&corpus_metric_index=0"><h3 class="card-title">Información de Flujos (click para más detalles)</h3></a>
+                  <a href="https://tet-pov-rtp1.cpoc.co/#/search-flows?t0=1676629800&t1=1676651400&load0=1676629800&load1=1676651400&load_metric=count&topn_cat=HOST_NAME&chips=W10-&size=20&sampled=false&explore=false&corpus_metric_index=0"><h3 class="card-title">Inventario de Equipos Cedis Saltillo</h3></a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -561,215 +553,195 @@
                     <thead>
                     <tr>
                       <!--<th>Timestamp</th>-->
-                      <th>Consumer Name</th>
-                      <th>Provider Name</th>
-                      <th>Consumer Address</th>
-                      <th>Provider Address</th>
-                      <th>Consumer Port</th>
-                      <th>Provider Port</th>
-                      <th>Protocol</th>
+                      <th>Hostname</th>
+                      <th>Model</th>
+                      <th>Management</th>
+                      <th>Rack</th>
+                      <th>UR</th>
+                      <th>Uptime</th>
+                      <!--<th>Protocol</th>-->
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-10</td>
-                      <td>Unknown</td>
+                      <td>OMXCORMS0NA01</td>
+                      <td>C9120</td>
                       <td>192.168.80.158</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-10</td>
-                      <td>mty-13</td>
+                      <td>OMXCORMS0NA02</td>
+                      <td>C9120</td>
+                      <td>192.168.80.159</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>12:00:00</td>
+                    </tr>
+                    <tr>
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <td>OMXCORMS0NA03</td>
+                      <td>C9120</td>
                       <td>192.168.80.160</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>12:00:00</td>
+                    </tr>
+                    <tr>
+                      <!--<td>Feb 17 4:30:00am</td>-->
+                      <td>OMXCORMS0NA04</td>
+                      <td>C9120</td>
                       <td>192.168.80.161</td>
-                      <td>0</td>
-                      <td>3306</td>
-                      <td>TCP</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-13</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.161</td>
-                      <td>155.248.196.28</td>
-                      <td>0</td>
-                      <td>123</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NA05</td>
+                      <td>C9120</td>
+                      <td>192.168.80.162</td>
+                      <td>N/A</td>
+                      <td>N/A</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-13</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.161</td>
-                      <td>64.100.1.197</td>
-                      <td>0</td>
-                      <td>443</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NR01</td>
+                      <td>C8300</td>
+                      <td>192.168.80.163</td>
+                      <td>2</td>
+                      <td>6</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-09</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.157</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NR02</td>
+                      <td>C8300</td>
+                      <td>192.168.80.164</td>
+                      <td>2</td>
+                      <td>7</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-11</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.159</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NM01</td>
+                      <td>C9300-24T</td>
+                      <td>192.168.80.165</td>
+                      <td>2</td>
+                      <td>8</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-12</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.160</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS01</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.166</td>
+                      <td>3</td>
+                      <td>1</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-08</td>
-                      <td>mty-09</td>
-                      <td>192.168.80.156</td>
-                      <td>192.168.80.157</td>
-                      <td>0</td>
-                      <td>3306</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NS02</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.167</td>
+                      <td>3</td>
+                      <td>2</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-13</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.161</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS03</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.168</td>
+                      <td>3</td>
+                      <td>3</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-11</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.159</td>
-                      <td>64.100.1.203</td>
-                      <td>0</td>
-                      <td>5660</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NS04</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.169</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-08</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.156</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS05</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.170</td>
+                      <td>3</td>
+                      <td>5</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-11</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.159</td>
-                      <td>64.100.1.197</td>
-                      <td>0</td>
-                      <td>443</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NS06</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.171</td>
+                      <td>3</td>
+                      <td>6</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-13</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.161</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS07</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.172</td>
+                      <td>3</td>
+                      <td>7</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-12</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.160</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS08</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.173</td>
+                      <td>3</td>
+                      <td>8</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-09</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.157</td>
-                      <td>224.0.0.251</td>
-                      <td>5353</td>
-                      <td>5353</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS09</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.174</td>
+                      <td>4</td>
+                      <td>1</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-13</td>
-                      <td>Unknown</td>
-                      <td>192.168.80.161</td>
-                      <td>64.100.1.201</td>
-                      <td>0</td>
-                      <td>5660</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NS10</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.175</td>
+                      <td>4</td>
+                      <td>2</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-08</td>
-                      <td>mty-09</td>
-                      <td>192.168.80.156</td>
-                      <td>192.168.80.157</td>
-                      <td>0</td>
-                      <td>3306</td>
-                      <td>TCP</td>
+                      <td>OMXCORMS0NS11</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.176</td>
+                      <td>4</td>
+                      <td>3</td>
+                      <td>12:00:00</td>
                     </tr>
                     <tr>
                       <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>mty-10</td>
-                      <td>mty-11</td>
-                      <td>192.168.80.158</td>
-                      <td>192.168.80.159</td>
-                      <td>0</td>
-                      <td>3306</td>
-                      <td>TCP</td>
-                    </tr>
-                    <tr>
-                      <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>Unknown</td>
-                      <td>Unknown</td>
-                      <td>0.0.0.0</td>
-                      <td>255.255.255.255</td>
-                      <td>68</td>
-                      <td>67</td>
-                      <td>UDP</td>
-                    </tr>
-                    <tr>
-                      <!--<td>Feb 17 4:30:00am</td>-->
-                      <td>Unknown</td>
-                      <td>Unknown</td>
-                      <td>0.0.0.0</td>
-                      <td>255.255.255.255</td>
-                      <td>68</td>
-                      <td>67</td>
-                      <td>UDP</td>
+                      <td>OMXCORMS0NS12</td>
+                      <td>C9200-24P</td>
+                      <td>192.168.80.177</td>
+                      <td>4</td>
+                      <td>4</td>
+                      <td>12:00:00</td>
                     </tr>
                     </tfoot>
                   </table>
@@ -786,255 +758,48 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title"><a href="https://tet-pov-rtp1.cpoc.co/#/vulnerabilities?scope_id=6437472f497d4f2929b5587f&cve_type=v2&tab=cves">Información de Vulnerabilidades (click para más detalles)</a></h3>
+                    <h3 class="card-title"><a href="https://tet-pov-rtp1.cpoc.co/#/vulnerabilities?scope_id=6437472f497d4f2929b5587f&cve_type=v2&tab=cves">Niveles de Servicio</a></h3>
                   </div>
                   <!-- ./card-header -->
                   <div class="card-body">
                     <table class="table table-bordered table-hover">
                       <thead>
                         <tr>
-                          <th>CVE</th>
-                          <th>Score</th>
-                          <th>Severity</th>
-                          <th>Access Vector</th>
-                          <th>Authentication</th>
+                          <th>SLA</th>
+                          <th>Descipción</th>
+                          <th>Tiempo de atención</th>
+                          <th>Tiempo de solución</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2020-14309</td>
-                          <td>4.6</td>
-                          <td>MEDIUM</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
+                          <td>Crítico</td>
+                          <td>Afectación total de servicios</td>
+                          <td>15 min</td>
+                          <td>4 horas</td>
                         </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14309"> https://access.redhat.com/security/cve/CVE-2020-14309</a>
-                              <br>Affected packages: wupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
-                              Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
+                        
                         <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>CVE-2020-15707</td>
-                          <td>4.4</td>
-                          <td>MEDIUM</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
+                          <td>Alto</td>
+                          <td>Intermitencia o degradación de servicios con impacto operativo</td>
+                          <td>15 min</td>
+                          <td>8 horas</td>
                         </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15707">https://access.redhat.com/security/cve/CVE-2020-15707</a><br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
+                        
                         <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>CVE-2020-15705</td>
-                          <td>4.4</td>
-                          <td>MEDIUM</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15705">https://access.redhat.com/security/cve/CVE-2020-15705</a><br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2020-14308</td>
-                          <td>4.4</td>
-                          <td>MEDIUM</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14308">https://access.redhat.com/security/cve/CVE-2020-14308</a><br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2020-15706</td>
-                          <td>4.3</td>
-                          <td>MEDIUM</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-15706">https://access.redhat.com/security/cve/CVE-2020-15706</a><br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos, mokutil-15-8.el7, shim-x64-15-8.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2018-14567</td>
-                          <td>4.3</td>
-                          <td>MEDIUM</td>
-                          <td>NETWORK</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2018-14567"></a>https://access.redhat.com/security/cve/CVE-2018-14567<br>
-Affected packages: libxml2-2.9.1-6.el7_9.6, libxml2-python-2.9.1-6.el7_9.6
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2021-25220</td>
-                          <td>4</td>
-                          <td>MEDIUM</td>
-                          <td>NETWORK</td>
-                          <td>SINGLE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2021-25220"></a>https://access.redhat.com/security/cve/CVE-2021-25220<br>
-Affected packages: bind-export-libs-9.11.4-26.P2.el7_9.9
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
+                          <td>Medio</td>
+                          <td>Intermitencia o degradación de servicios sin impacto operativo</td>
+                          <td>1 hora</td>
+                          <td>24 horas</td>
                         </tr>
                         
                         <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2020-14311</td>
-                          <td>3.6</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14311"></a>https://access.redhat.com/security/cve/CVE-2020-14311<br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2020-14310</td>
-                          <td>3.6</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2020-14310"></a>https://access.redhat.com/security/cve/CVE-2020-14310<br>
-Affected packages: fwupdate-efi-12-6.el7.centos, fwupdate-libs-12-6.el7.centos
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2022-21125</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21125"></a>https://access.redhat.com/security/cve/CVE-2022-21125<br>
-Affected packages: kernel-3.10.0-1160.71.1.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2022-29900</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-29900"></a>https://access.redhat.com/security/cve/CVE-2022-29900<br>
-Affected packages: kernel-3.10.0-1160.71.1.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2022-23825</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-23825"></a>https://access.redhat.com/security/cve/CVE-2022-23825<br>
-Affected packages: kernel-3.10.0-1160.71.1.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
+                          <td>Bajo</td>
+                          <td>Intermitencia o degradación de usuario</td>
+                          <td>24 horas</td>
+                          <td>72 horas</td>
                         </tr>
                         
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2022-21166</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21166"></a>https://access.redhat.com/security/cve/CVE-2022-21166<br>
-Affected packages: kernel-3.10.0-1160.71.1.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
-                        <tr data-widget="expandable-table" aria-expanded="false">
-                          <td>CVE-2022-21123</td>
-                          <td>2.1</td>
-                          <td>LOW</td>
-                          <td>LOCAL</td>
-                          <td>NONE</td>
-                        </tr>
-                        <tr class="expandable-body">
-                          <td colspan="5">
-                            <p>
-                              Reference URL: <a href="https://access.redhat.com/security/cve/CVE-2022-21123"></a>https://access.redhat.com/security/cve/CVE-2022-21123<br>
-Affected packages: kernel-3.10.0-1160.71.1.el7
-Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
-                            </p>
-                          </td>
-                        </tr>
-
                       </tbody>
                     </table>
                   </div>
@@ -1045,7 +810,69 @@ Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
             </div>
             <!-- FIN DE TABLA EXPANDABLE-->
 
-            
+            <!--WEDNESDAY-->
+
+            <!-- INICIO DE TABLA EXPANDABLE-->
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title"><a href="https://tet-pov-rtp1.cpoc.co/#/vulnerabilities?scope_id=6437472f497d4f2929b5587f&cve_type=v2&tab=cves">Matriz de Escalación</a></h3>
+                  </div>
+                  <!-- ./card-header -->
+                  <div class="card-body">
+                    <table class="table table-bordered table-hover">
+                      <thead>
+                        <tr>
+                          <th>Nivel</th>
+                          <th>Puesto</th>
+                          <th>Nombre</th>
+                          <th>Contacto</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>L2</td>
+                          <td>Coordinador de Área</td>
+                          <td>Miguel Cisneros</td>
+                          <td>macisneros@plannet.mx</td>
+                        </tr>
+                  
+                        <tr data-widget="expandable-table" aria-expanded="true">
+                          <td>L3</td>
+                          <td>Gerente de Operaciones</td>
+                          <td>Elio Alvarado</td>
+                          <td>ealvarado@plannet.mx</td>
+                        </tr>
+                        
+                        <tr data-widget="expandable-table" aria-expanded="true">
+                          <td>L4</td>
+                          <td>Director de Operaciones</td>
+                          <td>José Cañamar</td>
+                          <td>jcanamar@plannet.mx</td>
+                        </tr>
+                        
+                        <tr data-widget="expandable-table" aria-expanded="false">
+                          <td>L5</td>
+                          <td>Director General</td>
+                          <td>Antonio Cárcoba</td>
+                          <td>acarcoba@plannet.mx</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+              </div>
+            </div>
+            <!-- FIN DE TABLA EXPANDABLE-->
+
+            <!--WEDNESDAY-->
+
+            <br><br><center><img src="{% static 'assets/dist/img/DIAGRAMA-ATENCION.png' %}" alt="Oxxo" width="50%" height="30%"></center><br><br>
+
           </section>
           <!-- right col -->
         </div>
@@ -1056,7 +883,7 @@ Affected workloads: mty-08, mty-09, mty-10, mty-11, mty-12, mty-13
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="https://oxxo.com">OXXO</a>.</strong>
+    <strong>Copyright &copy; 2024 <a href="https://oxxo.com">OXXO</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0
