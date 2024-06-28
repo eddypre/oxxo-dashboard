@@ -197,15 +197,10 @@ def getLinks():
 def getDNACDevices():
     
     DNACdevices = []
-    DNAC_IP = "sandboxdnac.cisco.com"
-    DNAC_PORT = 443
-    DNAC_USER = "devnetuser"
-    DNAC_PASSWORD = "Cisco123!"
-
-    #DNAC_IP = "10.184.30.24"
-    #DNAC_PORT = 443
-    #DNAC_USER = "ctriana"
-    #DNAC_PASSWORD = "!5pMbY!WK9HnPYav"
+    DNAC_IP = "sandboxdnac.cisco.com" #Reemplazar esta variable por la IP original del DNAC
+    DNAC_PORT = 443 
+    DNAC_USER = "devnetuser" #Reemplazar esta variable por el usuario original del DNAC
+    DNAC_PASSWORD = "Cisco123!" #Reemplazar esta variable por password original del DNAC
 
     token = get_auth_token() # Get Token
     url = "https://"+DNAC_IP+"/api/v1/network-device"
