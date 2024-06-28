@@ -6,6 +6,8 @@ from pprint import pprint
 import meraki
 import pysnow
 import requests
+from requests.auth import HTTPBasicAuth
+#from dnac_config import DNAC_IP, DNAC_PORT, DNAC_USER, DNAC_PASSWORD
 import json
 from django.template import Template, Context
 #from acitoolkit.acitoolkit import Tenant, Session
@@ -45,7 +47,8 @@ def SERVICIOS_ELECTRONICOS(request):
     return render(request, 'servicios_electronicos.html')
 
 def CEDIS(request):
-    return render(request, 'cedis.html')
+    #return render(request, 'cedis.html')
+    return render(request, 'cedis.html', {"DNACDevices":getDNACDevices()})
 
 def BACK_OFFICE(request):
     return render(request, 'back_office.html')
@@ -114,6 +117,19 @@ class link:
         self.status = status
         self.ip = ip
 
+class dev:
+    def __init__(self, hostname, managementIpAddress, reachabilityStatus, serialNumber, platformId, softwareVersion, role, upTime, location, locationName):
+        self.hostname = hostname
+        self.managementIpAddress = managementIpAddress
+        self.reachabilityStatus = reachabilityStatus
+        self.serialNumber = serialNumber
+        self.platformId = platformId
+        self.softwareVersion = softwareVersion
+        self.role = role
+        self.upTime = upTime
+        self.location = location
+        self.locationName = locationName
+
 '''
 def getAppd():
     id = 0
@@ -175,6 +191,77 @@ def getLinks():
             #print("Interface==>"+interface+", Status==>"+status+", IP==>"+ip)
     #ctx = {"uno":"uno"}
     return links
+
+#DNAC************************************************************************************************************************
+
+def getDNACDevices():
+    
+    DNACdevices = []
+    DNAC_IP = "sandboxdnac.cisco.com"
+    DNAC_PORT = 443
+    DNAC_USER = "devnetuser"
+    DNAC_PASSWORD = "Cisco123!"
+
+    #DNAC_IP = "10.184.30.24"
+    #DNAC_PORT = 443
+    #DNAC_USER = "ctriana"
+    #DNAC_PASSWORD = "!5pMbY!WK9HnPYav"
+
+    token = get_auth_token() # Get Token
+    url = "https://"+DNAC_IP+"/api/v1/network-device"
+    hdr = {'x-auth-token': token, 'content-type' : 'application/json'}
+    resp = requests.get(url, headers=hdr, verify=False)  # Make the Get Request
+    device_list = resp.json()
+    #print(device_list)
+    #print_device_list(device_list)
+    for device in device_list['response']:
+        if device['serialNumber'] is not None and "," in device['serialNumber']:
+            serialPlatformList = zip(device['serialNumber'].split(","), device['platformId'].split(","))
+        else:
+            serialPlatformList = [(device['serialNumber'], device['platformId'])]
+        for (serialNumber, platformId) in serialPlatformList:
+            hostname = device['hostname']
+            managementIpAddress = device['managementIpAddress']
+            reachabilityStatus = device['reachabilityStatus']
+            #serialNumber = serialNumber
+            #platformID = platformID
+            softwareVersion = device['softwareVersion']
+            role = device['role']
+            upTime = "N/A" if device['upTime'] is None else device['upTime']
+            location = device['location']
+            locationName = device['locationName']
+        DNACdevices.append(dev(hostname, managementIpAddress, reachabilityStatus, serialNumber, platformId, softwareVersion, role, upTime, location, locationName))
+    return DNACdevices
+
+def print_device_list(device_json):
+    print("{0:42}{1:17}{2:12}{3:18}{4:12}{5:16}{6:15}".
+          format("hostname", "mgmt IP", "serial","platformId", "SW Version", "role", "Uptime"))
+    for device in device_json['response']:
+        uptime = "N/A" if device['upTime'] is None else device['upTime']
+        if device['serialNumber'] is not None and "," in device['serialNumber']:
+            serialPlatformList = zip(device['serialNumber'].split(","), device['platformId'].split(","))
+        else:
+            serialPlatformList = [(device['serialNumber'], device['platformId'])]
+        for (serialNumber, platformId) in serialPlatformList:
+            print("{0:42}{1:17}{2:12}{3:18}{4:12}{5:16}{6:15}".
+                  format(device['hostname'],
+                         device['managementIpAddress'],
+                         serialNumber,
+                         platformId,
+                         device['softwareVersion'],
+                         device['role'], uptime))
+
+def get_auth_token():
+    DNAC_IP = "sandboxdnac.cisco.com" #Reemplazar esta variable por la IP original del DNAC
+    DNAC_PORT = 443 
+    DNAC_USER = "devnetuser" #Reemplazar esta variable por el usuario original del DNAC
+    DNAC_PASSWORD = "Cisco123!" #Reemplazar esta variable por password original del DNAC
+    
+    url = 'https://'+DNAC_IP+'/dna/system/api/v1/auth/token'       # Endpoint URL
+    resp = requests.post(url, auth=HTTPBasicAuth(DNAC_USER, DNAC_PASSWORD), verify=False)  # Make the POST Request
+    token = resp.json()['Token']    # Retrieve the Token 
+    return token    # Create a return statement for the Token
+#DNAC************************************************************************************************************************
 
 
 #tetration
